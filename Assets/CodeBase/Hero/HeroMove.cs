@@ -20,7 +20,6 @@ public class HeroMove : MonoBehaviour
     private void Start()
     {
         _camera = Camera.main;
-        CameraFollow();
     }
 
     private void Update()
@@ -44,13 +43,5 @@ public class HeroMove : MonoBehaviour
         movementVector += Physics.gravity;
 
         _characterController.Move(movementVector * (_movementSpeed * Time.deltaTime));
-    }
-
-    private void CameraFollow()
-    {
-        if (_camera is { } && _camera.TryGetComponent(out CameraFollow cameraFollow))
-        {
-            cameraFollow.Follow(this.gameObject);
-        }
     }
 }

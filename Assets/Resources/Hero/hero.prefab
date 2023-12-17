@@ -1336,6 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 9588594}
+  CharacterController: {fileID: 2899899690389756738}
 --- !u!114 &7066982970359102696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,8 +1349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd47410de5955f418fa7136724afc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 0
-  _characterController: {fileID: 0}
+  _movementSpeed: 2.5
+  _characterController: {fileID: 2899899690389756738}
 --- !u!143 &2899899690389756738
 CharacterController:
   m_ObjectHideFlags: 0

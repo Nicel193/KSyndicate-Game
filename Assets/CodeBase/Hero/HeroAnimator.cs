@@ -27,7 +27,7 @@ namespace CodeBase.Hero
 
     private void Update()
     {
-      Animator.SetFloat(MoveHash, CharacterController.velocity.magnitude, 0.001f, Time.deltaTime);
+      Animator.SetFloat(MoveHash, CharacterController.velocity.magnitude);
     }
 
     public bool IsAttacking => State == AnimatorState.Attack;

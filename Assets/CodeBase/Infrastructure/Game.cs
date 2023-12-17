@@ -1,5 +1,5 @@
-﻿using CodeBase.Services.Input;
-using UnityEngine;
+﻿using CodeBase.Logic;
+using CodeBase.Services.Input;
 
 namespace CodeBase.Infrastructure
 {
@@ -7,17 +7,11 @@ namespace CodeBase.Infrastructure
     {
         public static IInputService InputService;
 
-        public Game()
-        {
-            RegisterInputService();
-        }
+        public GameStateMachine StateMachine;
 
-        private static void RegisterInputService()
+        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain loadingCurtain)
         {
-            if (Application.isEditor)
-                InputService = new StandaloneInputService();
-            else
-                InputService = new MobileInputService();
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), loadingCurtain);
         }
     }
 }

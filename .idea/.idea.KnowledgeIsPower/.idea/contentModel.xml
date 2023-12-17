@@ -13,8 +13,15 @@
             <e p="HeroMove.cs" t="Include" />
           </e>
           <e p="Infrastructure" t="Include">
+            <e p="BootstrapState.cs" t="Include" />
             <e p="Game.cs" t="Include" />
             <e p="GameBootstrapper.cs" t="Include" />
+            <e p="GameLoopState.cs" t="Include" />
+            <e p="GameStateMachine.cs" t="Include" />
+            <e p="ICoroutineRunner.cs" t="Include" />
+            <e p="IState.cs" t="Include" />
+            <e p="LoadLevelState.cs" t="Include" />
+            <e p="SceneLoader.cs" t="Include" />
           </e>
           <e p="Logic" t="Include">
             <e p="AnimatorState.cs" t="Include" />
@@ -23,6 +30,7 @@
               <e p="CameraFollow.cs" t="Include" />
             </e>
             <e p="IAnimationStateReader.cs" t="Include" />
+            <e p="LoadingCurtain.cs" t="Include" />
           </e>
           <e p="Services" t="Include">
             <e p="Input" t="Include">
