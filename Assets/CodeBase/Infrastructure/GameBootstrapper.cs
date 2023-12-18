@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CodeBase.Logic;
 using UnityEngine;
 
@@ -14,8 +15,10 @@ namespace CodeBase.Infrastructure
         {
             _game = new Game(this, loadingCurtain);
             _game.StateMachine.Enter<BootstrapState>();
-            
+
             DontDestroyOnLoad(this);
         }
+
+        private void Update() => _game.StateMachine.Update();
     }
 }

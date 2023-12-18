@@ -9,7 +9,12 @@
     {
         void Exit();
     }
-
+    
+    public interface IUpdatebleState
+    {
+        void Update();
+    }
+    
     public interface IPayloadState<TPayload> : IExitableState
     {
         void Enter(TPayload payload);
