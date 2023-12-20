@@ -8,20 +8,41 @@
       <e p="Assets" t="Include">
         <e p="CodeBase" t="Include">
           <e p="Constants.cs" t="Include" />
+          <e p="Data" t="Include">
+            <e p="PlayerProgress.cs" t="Include" />
+            <e p="PositionOnLevel.cs" t="Include" />
+            <e p="Vector3Data.cs" t="Include" />
+            <e p="WorldData.cs" t="Include" />
+          </e>
           <e p="Hero" t="Include">
             <e p="HeroAnimator.cs" t="Include" />
             <e p="HeroMove.cs" t="Include" />
           </e>
           <e p="Infrastructure" t="Include">
-            <e p="BootstrapState.cs" t="Include" />
+            <e p="AssetManagement" t="Include">
+              <e p="AssetPath.cs" t="Include" />
+              <e p="AssetProvider.cs" t="Include" />
+              <e p="IAssetProvider.cs" t="Include" />
+            </e>
+            <e p="DataExtensions.cs" t="Include" />
+            <e p="Factory" t="Include">
+              <e p="GameFactory.cs" t="Include" />
+              <e p="IGameFactory.cs" t="Include" />
+            </e>
             <e p="Game.cs" t="Include" />
             <e p="GameBootstrapper.cs" t="Include" />
-            <e p="GameLoopState.cs" t="Include" />
-            <e p="GameStateMachine.cs" t="Include" />
             <e p="ICoroutineRunner.cs" t="Include" />
-            <e p="IState.cs" t="Include" />
-            <e p="LoadLevelState.cs" t="Include" />
-            <e p="SceneLoader.cs" t="Include" />
+            <e p="States" t="Include">
+              <e p="BootstrapState.cs" t="Include" />
+              <e p="GameLoopState.cs" t="Include" />
+              <e p="GameStateMachine.cs" t="Include" />
+              <e p="IService.cs" t="Include" />
+              <e p="IState.cs" t="Include" />
+              <e p="LoadLevelState.cs" t="Include" />
+              <e p="LoadProgressState.cs" t="Include" />
+              <e p="SceneLoader.cs" t="Include" />
+              <e p="ServiceLocator.cs" t="Include" />
+            </e>
           </e>
           <e p="Logic" t="Include">
             <e p="AnimatorState.cs" t="Include" />
@@ -38,6 +59,15 @@
               <e p="InputService.cs" t="Include" />
               <e p="MobileInputService.cs" t="Include" />
               <e p="StandaloneInputService.cs" t="Include" />
+            </e>
+            <e p="PersistentProgress" t="Include">
+              <e p="ILoadebleProgress.cs" t="Include" />
+              <e p="IPersistentProgressService.cs" t="Include" />
+              <e p="ISavedProgress.cs" t="Include" />
+              <e p="PersistentProgressService.cs" t="Include" />
+            </e>
+            <e p="SaveLoad" t="Include">
+              <e p="ISaveLoadService.cs" t="Include" />
             </e>
           </e>
         </e>

@@ -1,25 +1,31 @@
 ﻿using CodeBase.Services.Input;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure
+namespace CodeBase.Infrastructure.States
 {
     public class BootstrapState : IState
     {
         private readonly GameStateMachine _stateMachine;
 
         private SceneLoader _sceneLoader;
+        private ServiceLocator _services;
 
-        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader)
+        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, ServiceLocator services)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
+            _services = services;
+            
+            RegisterServices();
         }
 
         public void Enter()
         {
-            RegisterServices();
-
             _sceneLoader.Load("Initial", EnterLoadLevel);
+        }
+
+        public void Exit()
+        {
         }
 
         private void EnterLoadLevel() =>
@@ -27,14 +33,12 @@ namespace CodeBase.Infrastructure
 
         private void RegisterServices()
         {
-            Game.InputService = RegisterInputService();
+            _services.RegisterSingle<IInputService>(InputService());
+            _services.RegisterSingle<IAssetProvider>(new AssetProvider());
+            _services.RegisterSingle<IGameFactory>(new GameFactory(ServiceLocator.Contener.Single<IAssetProvider>()));
         }
 
-        public void Exit()
-        {
-        }
-
-        private InputService RegisterInputService()
+        private InputService InputService()
         {
             if (Application.isEditor)
                 return new StandaloneInputService();

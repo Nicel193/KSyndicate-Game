@@ -1,5 +1,4 @@
-﻿using System;
-using CodeBase.Logic;
+﻿using CodeBase.Logic;
 using CodeBase.Logic.Camera;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -8,18 +7,18 @@ namespace CodeBase.Infrastructure
 {
     public class LoadLevelState : IPayloadState<string>
     {
-        private const string InitialPointTag = "InitialPoint";
-        private const string HeroPath = "Hero/hero";
-        private const string HudPath = "Hud/Hud";
         private readonly GameStateMachine _gameStateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _loadingCurtain;
 
-        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain)
+        private IGameFactory _gameFactory;
+
+        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, IGameFactory gameFactory)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _loadingCurtain = loadingCurtain;
+            _gameFactory = gameFactory;
         }
 
         public void Enter(string sceneName)
@@ -35,22 +34,14 @@ namespace CodeBase.Infrastructure
 
         private void OnLoaded()
         {
-            var initialPoint = GameObject.FindWithTag(InitialPointTag).transform;
-            var hero = Instantiate(HeroPath);
-            Instantiate(HudPath);
+            var hero = _gameFactory.CreateHero();
+            _gameFactory.CreateHud();
             
             CameraFollow(hero);
-            hero.transform.position = initialPoint.position;
-            
+
             _gameStateMachine.Enter<GameLoopState>();
         }
-
-        private GameObject Instantiate(string path)
-        {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab);
-        }
-
+        
         private void CameraFollow(GameObject hero)
         {
             if (Camera.main.TryGetComponent(out CameraFollow cameraFollow))
