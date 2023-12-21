@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace CodeBase.Infrastructure.States
 {
@@ -12,7 +13,16 @@ namespace CodeBase.Infrastructure.States
             => Implementation<TService>.ServiceInstance = service;
 
         public TService Single<TService>() where TService : IService
-            => Implementation<TService>.ServiceInstance;
+        {
+            TService service = Implementation<TService>.ServiceInstance;
+
+            if (service == null)
+            {
+                throw new Exception("You try get unregister service");
+            }
+
+            return service;
+        }
 
         public static class Implementation<TService> where TService : IService
         {

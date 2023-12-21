@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.States;
+﻿using System.Collections.Generic;
+using CodeBase.Infrastructure.States;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure
@@ -7,5 +8,8 @@ namespace CodeBase.Infrastructure
     {
         void CreateHud();
         GameObject CreateHero();
+        void Cleanup();
+        List<ILoadebleProgress> LoadebleProgresses { get; }
+        List<ISavedProgress> SavedProgresses { get; }
     }
 }

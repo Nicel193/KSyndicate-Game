@@ -1,9 +1,9 @@
 ﻿using CodeBase.Logic;
 using CodeBase.Logic.Camera;
+using CodeBase.Services.PersistentProgress;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
-namespace CodeBase.Infrastructure
+namespace CodeBase.Infrastructure.States
 {
     public class LoadLevelState : IPayloadState<string>
     {
@@ -12,18 +12,23 @@ namespace CodeBase.Infrastructure
         private readonly LoadingCurtain _loadingCurtain;
 
         private IGameFactory _gameFactory;
+        private readonly IPersistentProgressService _persistentProgressService;
 
-        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, IGameFactory gameFactory)
+        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
+            IGameFactory gameFactory,
+            IPersistentProgressService persistentProgressService)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _loadingCurtain = loadingCurtain;
             _gameFactory = gameFactory;
+            _persistentProgressService = persistentProgressService;
         }
 
         public void Enter(string sceneName)
         {
             _loadingCurtain.Show();
+            _gameFactory.Cleanup();
             _sceneLoader.Load(sceneName, OnLoaded);
         }
 
@@ -34,17 +39,31 @@ namespace CodeBase.Infrastructure
 
         private void OnLoaded()
         {
-            var hero = _gameFactory.CreateHero();
-            _gameFactory.CreateHud();
-            
-            CameraFollow(hero);
+            InitGameWorld();
+            InformProgressLoaders();
 
             _gameStateMachine.Enter<GameLoopState>();
         }
-        
+
+        private void InformProgressLoaders()
+        {
+            foreach (var loadebleProgress in _gameFactory.LoadebleProgresses)
+            {
+                loadebleProgress.LoadProgress(_persistentProgressService.PlayerProgress);
+            }
+        }
+
+        private void InitGameWorld()
+        {
+            var hero = _gameFactory.CreateHero();
+            _gameFactory.CreateHud();
+
+            CameraFollow(hero);
+        }
+
         private void CameraFollow(GameObject hero)
         {
-            if (Camera.main.TryGetComponent(out CameraFollow cameraFollow))
+            if (Camera.main is { } && Camera.main.TryGetComponent(out CameraFollow cameraFollow))
             {
                 cameraFollow.Follow(hero);
             }

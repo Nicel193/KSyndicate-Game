@@ -3,7 +3,7 @@ using CodeBase.Infrastructure.States;
 
 namespace CodeBase.Services.SaveLoad
 {
-    internal interface ISaveLoadService : IService
+    public interface ISaveLoadService : IService
     {
         void SaveProgress();
         PlayerProgress LoadProgress();

@@ -1,26 +1,58 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-namespace CodeBase.Infrastructure
+namespace CodeBase.Infrastructure.Factory
 {
     public class GameFactory : IGameFactory
     {
+        private const string InitialPointTag = "InitialPoint";
+        
         private readonly IAssetProvider _assetProvider;
 
-        private const string InitialPointTag = "InitialPoint";
+        public List<ILoadebleProgress> LoadebleProgresses { get; } = new List<ILoadebleProgress>();
+        public List<ISavedProgress> SavedProgresses { get;  } = new List<ISavedProgress>();
+
 
         public GameFactory(IAssetProvider assetProvider) =>
             _assetProvider = assetProvider;
 
         public void CreateHud() =>
-            _assetProvider.Instantiate(AssetPath.HudPath);
+            InstantiateRegistered(AssetPath.HudPath, Vector3.zero);
 
         public GameObject CreateHero()
         {
             var initialPoint = GameObject.FindWithTag(InitialPointTag).transform;
-            var hero = _assetProvider.Instantiate(AssetPath.HeroPath);
 
-            hero.transform.position = initialPoint.position;
-            return hero;
+            return InstantiateRegistered(AssetPath.HeroPath, initialPoint.position);
+        }
+
+        public void Cleanup()
+        {
+            LoadebleProgresses.Clear();
+            SavedProgresses.Clear();
+        }
+
+        private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
+        {
+            GameObject gameObject = _assetProvider.Instantiate(prefabPath);
+            gameObject.transform.position = at;
+            ProgressFinder(gameObject);
+            
+            return gameObject;
+        }
+
+        private void ProgressFinder(GameObject hero)
+        {
+            foreach (ILoadebleProgress loadebleProgress in hero.GetComponentsInChildren<ILoadebleProgress>())
+                Register(loadebleProgress);
+        }
+
+        private void Register(ILoadebleProgress loadebleProgress)
+        {
+            if (loadebleProgress is ISavedProgress savedProgress)
+                SavedProgresses.Add(savedProgress);
+            
+            LoadebleProgresses.Add(loadebleProgress);
         }
     }
 }
