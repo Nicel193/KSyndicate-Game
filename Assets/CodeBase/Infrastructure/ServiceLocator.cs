@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
+using CodeBase.Infrastructure.States;
 
-namespace CodeBase.Infrastructure.States
+namespace CodeBase.Infrastructure
 {
     public class ServiceLocator
     {
@@ -22,6 +22,16 @@ namespace CodeBase.Infrastructure.States
             }
 
             return service;
+        }
+
+        public void Unregister<TService>() where TService : IService
+        {
+            if (Implementation<TService>.ServiceInstance == null)
+            {
+                throw new Exception("You try delete unregister service");
+            }
+            
+            Implementation<TService>.ServiceInstance = default(TService);
         }
 
         public static class Implementation<TService> where TService : IService

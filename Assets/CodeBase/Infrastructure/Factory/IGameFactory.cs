@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.States;
 using UnityEngine;
 
@@ -11,5 +12,6 @@ namespace CodeBase.Infrastructure
         void Cleanup();
         List<ILoadebleProgress> LoadebleProgresses { get; }
         List<ISavedProgress> SavedProgresses { get; }
+        GameObject Hero { get; }
     }
 }

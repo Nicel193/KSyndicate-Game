@@ -18,6 +18,10 @@
           <e p="Editor" t="Include">
             <e p="Tools.cs" t="Include" />
           </e>
+          <e p="Enemy" t="Include">
+            <e p="AgentMoveToPlayer.cs" t="Include" />
+            <e p="EnemyAnimator.cs" t="Include" />
+          </e>
           <e p="Hero" t="Include">
             <e p="HeroAnimator.cs" t="Include" />
             <e p="HeroMove.cs" t="Include" />
@@ -29,6 +33,7 @@
               <e p="IAssetProvider.cs" t="Include" />
             </e>
             <e p="DataExtensions.cs" t="Include" />
+            <e p="DependencyResolver.cs" t="Include" />
             <e p="Factory" t="Include">
               <e p="GameFactory.cs" t="Include" />
               <e p="IGameFactory.cs" t="Include" />
@@ -38,15 +43,18 @@
             <e p="GameRunner.cs" t="Include" />
             <e p="ICoroutineRunner.cs" t="Include" />
             <e p="ServiceLocator.cs" t="Include" />
-            <e p="States" t="Include">
-              <e p="BootstrapState.cs" t="Include" />
-              <e p="GameLoopState.cs" t="Include" />
+            <e p="StateMachine" t="Include">
               <e p="GameStateMachine.cs" t="Include" />
-              <e p="IService.cs" t="Include" />
+              <e p="IExitableState.cs" t="Include" />
+              <e p="IPayloadState.cs" t="Include" />
               <e p="IState.cs" t="Include" />
-              <e p="LoadLevelState.cs" t="Include" />
-              <e p="LoadProgressState.cs" t="Include" />
-              <e p="SceneLoader.cs" t="Include" />
+              <e p="IUpdatebleState.cs" t="Include" />
+              <e p="States" t="Include">
+                <e p="BootstrapState.cs" t="Include" />
+                <e p="GameLoopState.cs" t="Include" />
+                <e p="LoadLevelState.cs" t="Include" />
+                <e p="LoadProgressState.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Logic" t="Include">
@@ -58,6 +66,7 @@
             <e p="IAnimationStateReader.cs" t="Include" />
             <e p="LoadingCurtain.cs" t="Include" />
             <e p="SaveTrigger.cs" t="Include" />
+            <e p="SceneLoader.cs" t="Include" />
           </e>
           <e p="Services" t="Include">
             <e p="Input" t="Include">
@@ -66,6 +75,7 @@
               <e p="MobileInputService.cs" t="Include" />
               <e p="StandaloneInputService.cs" t="Include" />
             </e>
+            <e p="IService.cs" t="Include" />
             <e p="PersistentProgress" t="Include">
               <e p="ILoadebleProgress.cs" t="Include" />
               <e p="IPersistentProgressService.cs" t="Include" />

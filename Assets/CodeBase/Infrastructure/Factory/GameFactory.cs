@@ -11,6 +11,8 @@ namespace CodeBase.Infrastructure.Factory
 
         public List<ILoadebleProgress> LoadebleProgresses { get; } = new List<ILoadebleProgress>();
         public List<ISavedProgress> SavedProgresses { get;  } = new List<ISavedProgress>();
+        
+        public GameObject Hero { get; private set; }
 
 
         public GameFactory(IAssetProvider assetProvider) =>
@@ -22,8 +24,9 @@ namespace CodeBase.Infrastructure.Factory
         public GameObject CreateHero()
         {
             var initialPoint = GameObject.FindWithTag(InitialPointTag).transform;
+            Hero = InstantiateRegistered(AssetPath.HeroPath, initialPoint.position);
 
-            return InstantiateRegistered(AssetPath.HeroPath, initialPoint.position);
+            return Hero;
         }
 
         public void Cleanup()
