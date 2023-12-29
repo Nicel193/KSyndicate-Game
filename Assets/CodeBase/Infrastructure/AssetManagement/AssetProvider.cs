@@ -1,13 +1,19 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace CodeBase.Infrastructure
+namespace CodeBase.Infrastructure.AssetManagement
 {
-    public class AssetProvider : IAssetProvider
+  public class AssetProvider : IAssetProvider
+  {
+    public GameObject Instantiate(string path, Vector3 at)
     {
-        public GameObject Instantiate(string path)
-        {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab);
-        }
+      var prefab = Resources.Load<GameObject>(path);
+      return Object.Instantiate(prefab, at, Quaternion.identity);
     }
+
+    public GameObject Instantiate(string path)
+    {
+      var prefab = Resources.Load<GameObject>(path);
+      return Object.Instantiate(prefab);
+    }
+  }
 }

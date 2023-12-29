@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace CodeBase.Editor
 {
-    public class Tools
+  public class Tools 
+  {
+    [MenuItem("Tools/ClearPrefs")]
+    public static void ClearPrefs()
     {
-        [MenuItem("Tools/Clear Prefs")]
-        public static void ClearPrefs()
-        {
-            PlayerPrefs.DeleteAll();
-            PlayerPrefs.Save();
-        }
+      PlayerPrefs.DeleteAll();
+      PlayerPrefs.Save();
     }
+  }
 }

@@ -10,6 +10,7 @@ TagManager:
   - FxTemporaire
   - InitialPoint
   - LoadingCurtain
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
@@ -19,15 +20,15 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
   - 
   - 
   - 
   - Player
   - Aggro
-  - StopZone
+  - AttackZone
   - Hittable
-  - Pickup
+  - 
   - 
   - 
   - 

@@ -1,16 +1,21 @@
-﻿using System;
-using UnityEngine;
+using System;
 
 namespace CodeBase.Data
 {
-    [Serializable]
-    public class PlayerProgress
-    {
-        public WorldData WorldData = new WorldData();
+  [Serializable]
+  public class PlayerProgress
+  {
+    public State HeroState;
+    public WorldData WorldData;
+    public Stats HeroStats;
+    public KillData KillData;
 
-        public PlayerProgress(string initialLevel)
-        {
-            WorldData.PositionOnLevel = new PositionOnLevel(initialLevel);
-        }
+    public PlayerProgress(string initialLevel)
+    {
+      WorldData = new WorldData(initialLevel);
+      HeroState = new State();
+      HeroStats = new Stats();
+      KillData = new KillData();
     }
+  }
 }

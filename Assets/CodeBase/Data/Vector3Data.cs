@@ -1,19 +1,19 @@
-﻿using System;
+using System;
 
 namespace CodeBase.Data
 {
-    [Serializable]
-    public class Vector3Data
-    {
-        public float x;
-        public float y;
-        public float z;
+  [Serializable]
+  public class Vector3Data
+  {
+    public float X;
+    public float Y;
+    public float Z;
 
-        public Vector3Data(float z, float y, float x)
-        {
-            this.z = z;
-            this.y = y;
-            this.x = x;
-        }
+    public Vector3Data(float x, float y, float z)
+    {
+      X = x;
+      Y = y;
+      Z = z;
     }
+  }
 }

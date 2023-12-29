@@ -1,10 +1,16 @@
-﻿using System;
+using System;
+using UnityEngine.Serialization;
 
 namespace CodeBase.Data
 {
-    [Serializable]
-    public class WorldData
+  [Serializable]
+  public class WorldData
+  {
+    public PositionOnLevel PositionOnLevel;
+
+    public WorldData(string initialLevel)
     {
-        public PositionOnLevel PositionOnLevel;
+      PositionOnLevel = new PositionOnLevel(initialLevel);
     }
+  }
 }

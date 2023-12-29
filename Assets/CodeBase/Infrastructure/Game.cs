@@ -1,20 +1,17 @@
-﻿using CodeBase.Infrastructure.StateMachine;
+using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.States;
 using CodeBase.Logic;
 using CodeBase.Services.Input;
 
 namespace CodeBase.Infrastructure
 {
-    public class Game
-    {
-        public GameStateMachine StateMachine;
+  public class Game
+  {
+    public GameStateMachine StateMachine;
 
-        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain loadingCurtain)
-        {
-            SceneLoader sceneLoader = new SceneLoader(coroutineRunner);
-            ServiceLocator serviceLocator = ServiceLocator.Contener;
-            
-            StateMachine = new GameStateMachine(sceneLoader, loadingCurtain, serviceLocator, new DependencyResolver(serviceLocator));
-        }
+    public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain)
+    {
+      StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain, AllServices.Container);
     }
+  }
 }

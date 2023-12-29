@@ -1,61 +1,72 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using CodeBase.Infrastructure.AssetManagement;
+using CodeBase.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Factory
 {
-    public class GameFactory : IGameFactory
+  public class GameFactory : IGameFactory
+  {
+    private readonly IAssetProvider _assets;
+    
+    public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
+    public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
+    
+    public GameObject HeroGameObject { get; set; }
+    public event Action HeroCreated;
+
+    public GameFactory(IAssetProvider assets)
     {
-        private const string InitialPointTag = "InitialPoint";
-        
-        private readonly IAssetProvider _assetProvider;
-
-        public List<ILoadebleProgress> LoadebleProgresses { get; } = new List<ILoadebleProgress>();
-        public List<ISavedProgress> SavedProgresses { get;  } = new List<ISavedProgress>();
-        
-        public GameObject Hero { get; private set; }
-
-
-        public GameFactory(IAssetProvider assetProvider) =>
-            _assetProvider = assetProvider;
-
-        public void CreateHud() =>
-            InstantiateRegistered(AssetPath.HudPath, Vector3.zero);
-
-        public GameObject CreateHero()
-        {
-            var initialPoint = GameObject.FindWithTag(InitialPointTag).transform;
-            Hero = InstantiateRegistered(AssetPath.HeroPath, initialPoint.position);
-
-            return Hero;
-        }
-
-        public void Cleanup()
-        {
-            LoadebleProgresses.Clear();
-            SavedProgresses.Clear();
-        }
-
-        private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
-        {
-            GameObject gameObject = _assetProvider.Instantiate(prefabPath);
-            gameObject.transform.position = at;
-            ProgressFinder(gameObject);
-            
-            return gameObject;
-        }
-
-        private void ProgressFinder(GameObject hero)
-        {
-            foreach (ILoadebleProgress loadebleProgress in hero.GetComponentsInChildren<ILoadebleProgress>())
-                Register(loadebleProgress);
-        }
-
-        private void Register(ILoadebleProgress loadebleProgress)
-        {
-            if (loadebleProgress is ISavedProgress savedProgress)
-                SavedProgresses.Add(savedProgress);
-            
-            LoadebleProgresses.Add(loadebleProgress);
-        }
+      _assets = assets;
     }
+
+    public GameObject CreateHero(GameObject at)
+    {
+      HeroGameObject = InstantiateRegistered(AssetPath.HeroPath, at.transform.position);
+      HeroCreated?.Invoke();
+      return HeroGameObject;
+    }
+
+    public GameObject CreateHud() => 
+      InstantiateRegistered(AssetPath.HudPath);
+
+    public void Cleanup()
+    {
+      ProgressReaders.Clear();
+      ProgressWriters.Clear();
+    }
+
+    private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
+    {
+      GameObject gameObject = _assets.Instantiate(path: prefabPath, at: at);
+
+      RegisterProgressWatchers(gameObject);
+      return gameObject;
+    } 
+    
+    private GameObject InstantiateRegistered(string prefabPath)
+    {
+      GameObject gameObject = _assets.Instantiate(path: prefabPath);
+
+      RegisterProgressWatchers(gameObject);
+      return gameObject;
+    }
+
+    private void RegisterProgressWatchers(GameObject gameObject)
+    {
+      foreach (ISavedProgressReader progressReader in gameObject.GetComponentsInChildren<ISavedProgressReader>())
+      {
+        Register(progressReader);
+      }
+    }
+
+    public void Register(ISavedProgressReader progressReader)
+    {
+      if(progressReader is ISavedProgress progressWriter)
+        ProgressWriters.Add(progressWriter);
+      
+      ProgressReaders.Add(progressReader);
+    }
+  }
 }

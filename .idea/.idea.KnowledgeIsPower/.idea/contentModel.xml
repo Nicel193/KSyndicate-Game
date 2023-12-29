@@ -4,26 +4,52 @@
     <e p="C:\Users\rkuck\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\rkuck\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_KnowledgeIsPower.-1954118872.00" t="ExcludeRecursive" />
     <e p="E:\MyGames\KnowledgeIsPower" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CodeBase" t="Include">
+          <e p="CameraLogic" t="Include">
+            <e p="CameraFollow.cs" t="Include" />
+          </e>
           <e p="Constants.cs" t="Include" />
           <e p="Data" t="Include">
+            <e p="DataExtensions.cs" t="Include" />
+            <e p="KillData.cs" t="Include" />
             <e p="PlayerProgress.cs" t="Include" />
             <e p="PositionOnLevel.cs" t="Include" />
+            <e p="State.cs" t="Include" />
+            <e p="Stats.cs" t="Include" />
             <e p="Vector3Data.cs" t="Include" />
             <e p="WorldData.cs" t="Include" />
           </e>
           <e p="Editor" t="Include">
+            <e p="EnemySpawnerEditor.cs" t="Include" />
             <e p="Tools.cs" t="Include" />
+            <e p="UniqueIdEditor.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
             <e p="AgentMoveToPlayer.cs" t="Include" />
+            <e p="Aggro.cs" t="Include" />
+            <e p="AnimateAlongAgent.cs" t="Include" />
+            <e p="Attack.cs" t="Include" />
+            <e p="CheckAttackRange.cs" t="Include" />
             <e p="EnemyAnimator.cs" t="Include" />
+            <e p="EnemyDeath.cs" t="Include" />
+            <e p="EnemyHealth.cs" t="Include" />
+            <e p="EnemySpawner.cs" t="Include" />
+            <e p="EnemyType.cs" t="Include" />
+            <e p="Follow.cs" t="Include" />
+            <e p="PhysicsDebug.cs" t="Include" />
+            <e p="RotateToHero.cs" t="Include" />
+            <e p="TriggerObserver.cs" t="Include" />
           </e>
           <e p="Hero" t="Include">
             <e p="HeroAnimator.cs" t="Include" />
+            <e p="HeroAttack.cs" t="Include" />
+            <e p="HeroDeath.cs" t="Include" />
+            <e p="HeroHealth.cs" t="Include" />
             <e p="HeroMove.cs" t="Include" />
           </e>
           <e p="Infrastructure" t="Include">
@@ -32,8 +58,6 @@
               <e p="AssetProvider.cs" t="Include" />
               <e p="IAssetProvider.cs" t="Include" />
             </e>
-            <e p="DataExtensions.cs" t="Include" />
-            <e p="DependencyResolver.cs" t="Include" />
             <e p="Factory" t="Include">
               <e p="GameFactory.cs" t="Include" />
               <e p="IGameFactory.cs" t="Include" />
@@ -42,31 +66,38 @@
             <e p="GameBootstrapper.cs" t="Include" />
             <e p="GameRunner.cs" t="Include" />
             <e p="ICoroutineRunner.cs" t="Include" />
-            <e p="ServiceLocator.cs" t="Include" />
-            <e p="StateMachine" t="Include">
-              <e p="GameStateMachine.cs" t="Include" />
-              <e p="IExitableState.cs" t="Include" />
-              <e p="IPayloadState.cs" t="Include" />
-              <e p="IState.cs" t="Include" />
-              <e p="IUpdatebleState.cs" t="Include" />
-              <e p="States" t="Include">
-                <e p="BootstrapState.cs" t="Include" />
-                <e p="GameLoopState.cs" t="Include" />
-                <e p="LoadLevelState.cs" t="Include" />
-                <e p="LoadProgressState.cs" t="Include" />
+            <e p="SceneLoader.cs" t="Include" />
+            <e p="Services" t="Include">
+              <e p="AllServices.cs" t="Include" />
+              <e p="IService.cs" t="Include" />
+              <e p="PersistentProgress" t="Include">
+                <e p="IPersistentProgressService.cs" t="Include" />
+                <e p="ISavedProgress.cs" t="Include" />
+                <e p="ISavedProgressReader.cs" t="Include" />
+                <e p="PersistentProgressService.cs" t="Include" />
               </e>
+              <e p="SaveLoad" t="Include">
+                <e p="ISaveLoadService.cs" t="Include" />
+                <e p="SaveLoadService.cs" t="Include" />
+              </e>
+            </e>
+            <e p="States" t="Include">
+              <e p="BootstrapState.cs" t="Include" />
+              <e p="GameLoopState.cs" t="Include" />
+              <e p="GameStateMachine.cs" t="Include" />
+              <e p="IState.cs" t="Include" />
+              <e p="LoadLevelState.cs" t="Include" />
+              <e p="LoadProgressState.cs" t="Include" />
             </e>
           </e>
           <e p="Logic" t="Include">
             <e p="AnimatorState.cs" t="Include" />
             <e p="AnimatorStateReporter.cs" t="Include" />
-            <e p="Camera" t="Include">
-              <e p="CameraFollow.cs" t="Include" />
-            </e>
             <e p="IAnimationStateReader.cs" t="Include" />
+            <e p="IHealth.cs" t="Include" />
             <e p="LoadingCurtain.cs" t="Include" />
             <e p="SaveTrigger.cs" t="Include" />
-            <e p="SceneLoader.cs" t="Include" />
+            <e p="UniqueId.cs" t="Include" />
           </e>
           <e p="Services" t="Include">
             <e p="Input" t="Include">
@@ -75,20 +106,45 @@
               <e p="MobileInputService.cs" t="Include" />
               <e p="StandaloneInputService.cs" t="Include" />
             </e>
-            <e p="IService.cs" t="Include" />
-            <e p="PersistentProgress" t="Include">
-              <e p="ILoadebleProgress.cs" t="Include" />
-              <e p="IPersistentProgressService.cs" t="Include" />
-              <e p="ISavedProgress.cs" t="Include" />
-              <e p="PersistentProgressService.cs" t="Include" />
-            </e>
-            <e p="SaveLoad" t="Include">
-              <e p="ISaveLoadService.cs" t="Include" />
-              <e p="SaveLoadService.cs" t="Include" />
-            </e>
+          </e>
+          <e p="UI" t="Include">
+            <e p="ActorUI.cs" t="Include" />
+            <e p="HpBar.cs" t="Include" />
+            <e p="LookAtCamera.cs" t="Include" />
           </e>
         </e>
         <e p="Plugins" t="Include">
+          <e p="JMO Assets" t="Include">
+            <e p="Cartoon FX" t="Include">
+              <e p="CartoonFX Free.txt" t="Include" />
+              <e p="Demo" t="Include">
+                <e p="Assets" t="Include">
+                  <e p="CFX_AutoStopLoopedEffect.cs" t="Include" />
+                  <e p="CFX_Demo_New.cs" t="Include" />
+                  <e p="CFX_Demo_RandomDir.cs" t="Include" />
+                  <e p="CFX_Demo_RandomDirectionTranslate.cs" t="Include" />
+                  <e p="CFX_Demo_RotateCamera.cs" t="Include" />
+                  <e p="CFX_Demo_Translate.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="CFX_AutoDestructShuriken.cs" t="Include" />
+                <e p="CFX_AutoRotate.cs" t="Include" />
+                <e p="CFX_LightFlicker.cs" t="Include" />
+                <e p="CFX_LightIntensityFade.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="CFX3 Multiply Color.shader" t="Include" />
+                <e p="CFXM_MobileParticleAdd_Alpha8.shader" t="Include" />
+              </e>
+            </e>
+            <e p="Cartoon FX Easy Editor" t="Include">
+              <e p="CartoonFX Easy Editor Readme.txt" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="CFXEasyEditor.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="SimpleInput" t="Include">
             <e p="Credits.txt" t="Include" />
             <e p="Editor" t="Include">

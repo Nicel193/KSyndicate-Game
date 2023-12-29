@@ -1,22 +1,22 @@
-﻿using System;
+using System;
 
 namespace CodeBase.Data
 {
-    [Serializable]
-    public class PositionOnLevel
-    {
-        public string LevelName;
-        public Vector3Data Position;
+  [Serializable]
+  public class PositionOnLevel
+  {
+    public string Level;
+    public Vector3Data Position;
 
-        public PositionOnLevel(string levelName)
-        {
-            LevelName = levelName;
-        }
-        
-        public PositionOnLevel(string levelName, Vector3Data position)
-        {
-            LevelName = levelName;
-            Position = position;
-        }
+    public PositionOnLevel(string level, Vector3Data position)
+    {
+      Level = level;
+      Position = position;
     }
+
+    public PositionOnLevel(string initialLevel)
+    {
+      Level = initialLevel;
+    }
+  }
 }
