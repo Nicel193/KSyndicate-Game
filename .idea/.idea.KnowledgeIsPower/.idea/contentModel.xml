@@ -16,10 +16,13 @@
           <e p="Constants.cs" t="Include" />
           <e p="Data" t="Include">
             <e p="DataExtensions.cs" t="Include" />
+            <e p="IStaticDataService.cs" t="Include" />
             <e p="KillData.cs" t="Include" />
+            <e p="MonstersStaticData.cs" t="Include" />
             <e p="PlayerProgress.cs" t="Include" />
             <e p="PositionOnLevel.cs" t="Include" />
             <e p="State.cs" t="Include" />
+            <e p="StaticDataService.cs" t="Include" />
             <e p="Stats.cs" t="Include" />
             <e p="Vector3Data.cs" t="Include" />
             <e p="WorldData.cs" t="Include" />

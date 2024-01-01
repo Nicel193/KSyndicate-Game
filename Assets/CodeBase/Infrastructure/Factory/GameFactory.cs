@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CodeBase.Data;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
@@ -9,16 +10,18 @@ namespace CodeBase.Infrastructure.Factory
   public class GameFactory : IGameFactory
   {
     private readonly IAssetProvider _assets;
-    
+    private readonly IStaticDataService _staticDataService;
+
     public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
     public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
     
     public GameObject HeroGameObject { get; set; }
     public event Action HeroCreated;
 
-    public GameFactory(IAssetProvider assets)
+    public GameFactory(IAssetProvider assets, IStaticDataService staticDataService)
     {
       _assets = assets;
+      _staticDataService = staticDataService;
     }
 
     public GameObject CreateHero(GameObject at)

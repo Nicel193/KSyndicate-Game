@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.AssetManagement;
+﻿using CodeBase.Data;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
@@ -35,11 +36,20 @@ namespace CodeBase.Infrastructure.States
 
     private void RegisterServices()
     {
+      RegisterStaticData();
+      
       _services.RegisterSingle<IInputService>(InputService());
       _services.RegisterSingle<IAssetProvider>(new AssetProvider());
       _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
-      _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>()));
+      _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>(), _services.Single<IStaticDataService>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
+    }
+
+    private void RegisterStaticData()
+    {
+      IStaticDataService staticData = new StaticDataService();
+      staticData.LoadMonsters();
+      _services.RegisterSingle<IStaticDataService>(staticData);
     }
 
     private void EnterLoadLevel() =>
