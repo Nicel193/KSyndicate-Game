@@ -1,5 +1,4 @@
 using CodeBase.Data;
-using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
 
@@ -10,17 +9,17 @@ namespace CodeBase.Infrastructure.Services.SaveLoad
     private const string ProgressKey = "Progress";
     
     private readonly IPersistentProgressService _progressService;
-    private readonly IGameFactory _gameFactory;
+    private readonly ISavedProgressLocator _savedProgressLocator;
 
-    public SaveLoadService(IPersistentProgressService progressService, IGameFactory gameFactory)
+    public SaveLoadService(IPersistentProgressService progressService, ISavedProgressLocator savedProgressLocator)
     {
       _progressService = progressService;
-      _gameFactory = gameFactory;
+      _savedProgressLocator = savedProgressLocator;
     }
 
     public void SaveProgress()
     {
-      foreach (ISavedProgress progressWriter in _gameFactory.ProgressWriters)
+      foreach (ISavedProgress progressWriter in _savedProgressLocator.ProgressWriters)
         progressWriter.UpdateProgress(_progressService.Progress);
       
       PlayerPrefs.SetString(ProgressKey, _progressService.Progress.ToJson());

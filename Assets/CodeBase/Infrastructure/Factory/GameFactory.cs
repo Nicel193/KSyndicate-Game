@@ -1,6 +1,5 @@
-using System.Collections.Generic;
 using CodeBase.Infrastructure.AssetManagement;
-using CodeBase.Infrastructure.Services.PersistentProgress;
+using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;
 using CodeBase.UI;
 using UnityEngine;
@@ -10,14 +9,13 @@ namespace CodeBase.Infrastructure.Factory
     public class GameFactory : IGameFactory
     {
         private readonly IAssetProvider _assets;
+        private readonly ISavedProgressLocator _savedProgressLocator;
+        
+        public GameObject HeroGameObject { get; private set; }
 
-        public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
-        public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
-
-        private GameObject HeroGameObject { get; set; }
-
-        public GameFactory(IAssetProvider assets)
+        public GameFactory(IAssetProvider assets, ISavedProgressLocator savedProgressLocator)
         {
+            _savedProgressLocator = savedProgressLocator;
             _assets = assets;
         }
 
@@ -30,26 +28,11 @@ namespace CodeBase.Infrastructure.Factory
             return HeroGameObject;
         }
         
-
-        public void Register(ISavedProgressReader progressReader)
-        {
-            if (progressReader is ISavedProgress progressWriter)
-                ProgressWriters.Add(progressWriter);
-
-            ProgressReaders.Add(progressReader);
-        }
-
-        public void Cleanup()
-        {
-            ProgressReaders.Clear();
-            ProgressWriters.Clear();
-        }
-
         private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
         {
             GameObject gameObject = _assets.Instantiate(path: prefabPath, at: at);
 
-            RegisterProgressWatchers(gameObject);
+            _savedProgressLocator.RegisterProgressWatchers(gameObject);
             return gameObject;
         }
 
@@ -57,16 +40,8 @@ namespace CodeBase.Infrastructure.Factory
         {
             GameObject gameObject = _assets.Instantiate(path: prefabPath);
 
-            RegisterProgressWatchers(gameObject);
+            _savedProgressLocator.RegisterProgressWatchers(gameObject);
             return gameObject;
-        }
-
-        private void RegisterProgressWatchers(GameObject gameObject)
-        {
-            foreach (ISavedProgressReader progressReader in gameObject.GetComponentsInChildren<ISavedProgressReader>())
-            {
-                Register(progressReader);
-            }
         }
         
         private void InitHud(GameObject hero)

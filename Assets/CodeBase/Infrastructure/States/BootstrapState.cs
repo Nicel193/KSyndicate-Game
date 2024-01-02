@@ -40,6 +40,7 @@ namespace CodeBase.Infrastructure.States
             RegisterStaticData();
 
             _services.RegisterSingle<IInputService>(InputService());
+            _services.RegisterSingle<ISavedProgressLocator>(new SavedProgressLocator());
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
             _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
 
@@ -51,12 +52,14 @@ namespace CodeBase.Infrastructure.States
         {
             _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(
                 _services.Single<IPersistentProgressService>(),
-                _services.Single<IGameFactory>()));
+                _services.Single<ISavedProgressLocator>()));
         }
 
         private void RegisterFactories()
         {
-            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>()));
+            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>(),
+                _services.Single<ISavedProgressLocator>()));
+
             _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(_services.Single<IStaticDataService>(),
                 _services.Single<IGameFactory>()));
         }

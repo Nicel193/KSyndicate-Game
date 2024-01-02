@@ -5,13 +5,13 @@ using CodeBase.Services.Input;
 
 namespace CodeBase.Infrastructure
 {
-  public class Game
-  {
-    public GameStateMachine StateMachine;
-
-    public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain)
+    public class Game
     {
-      StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain, AllServices.Container);
+        public GameStateMachine StateMachine;
+
+        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain)
+        {
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain, AllServices.Container);
+        }
     }
-  }
 }
