@@ -20,6 +20,7 @@
             <e p="KillData.cs" t="Include" />
             <e p="MonstersStaticData.cs" t="Include" />
             <e p="PlayerProgress.cs" t="Include" />
+            <e p="PlayerStaticData.cs" t="Include" />
             <e p="PositionOnLevel.cs" t="Include" />
             <e p="State.cs" t="Include" />
             <e p="StaticDataService.cs" t="Include" />

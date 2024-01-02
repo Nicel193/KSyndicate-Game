@@ -1,11 +1,8 @@
-﻿using System;
-using CodeBase.CameraLogic;
+﻿using CodeBase.CameraLogic;
 using CodeBase.Enemy;
-using CodeBase.Hero;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Logic;
-using CodeBase.UI;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.States
@@ -59,7 +56,6 @@ namespace CodeBase.Infrastructure.States
       InitSpawners();
       
       GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
-      InitHud(hero);
 
       CameraFollow(hero);
     }
@@ -74,14 +70,7 @@ namespace CodeBase.Infrastructure.States
         }
       }
     }
-
-    private void InitHud(GameObject hero)
-    {
-      GameObject hud = _gameFactory.CreateHud();
-      
-      hud.GetComponentInChildren<ActorUI>().Construct(hero.GetComponent<HeroHealth>());
-    }
-
+    
     private void CameraFollow(GameObject hero) =>
       Camera.main.GetComponent<CameraFollow>().Follow(hero);
   }

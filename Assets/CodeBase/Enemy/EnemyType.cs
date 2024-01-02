@@ -1,8 +1,8 @@
-﻿namespace CodeBase.Logic
+﻿namespace CodeBase.Enemy
 {
     public enum EnemyType
     {
-        Lich = 1,
-        Default = 2
+        Lich = 0,
+        Golem = 1
     }
 }

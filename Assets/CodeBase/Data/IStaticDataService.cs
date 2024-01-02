@@ -1,11 +1,12 @@
-﻿using CodeBase.Infrastructure.Services;
-using CodeBase.Logic;
+﻿using CodeBase.Enemy;
+using CodeBase.Infrastructure.Services;
 
 namespace CodeBase.Data
 {
     public interface IStaticDataService : IService
     {
         void LoadMonsters();
-        MonstersStaticData GetMonsterData(EnemyType enemyType);
+        bool TryGetMonsterData(EnemyType enemyType, out MonstersStaticData monstersStaticData);
+        PlayerStaticData GetPlayerData();
     }
 }

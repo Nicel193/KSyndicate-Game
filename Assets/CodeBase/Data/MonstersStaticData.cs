@@ -1,4 +1,4 @@
-﻿using CodeBase.Logic;
+﻿using CodeBase.Enemy;
 using UnityEngine;
 
 namespace CodeBase.Data
@@ -13,6 +13,7 @@ namespace CodeBase.Data
         public float Cleavage = 0.5f;
         public float EffectiveDistance = 0.5f;
         public float Damage = 10;
+        public float Speed = 3;
 
         public GameObject EnemyPrefab;
     }

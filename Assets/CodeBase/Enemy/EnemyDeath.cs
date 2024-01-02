@@ -1,21 +1,25 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace CodeBase.Enemy
 {
-  [RequireComponent(typeof(EnemyHealth), typeof(EnemyAnimator))]
+  [RequireComponent(typeof(EnemyHealth), typeof(EnemyAnimator), typeof(NavMeshAgent))]
   public class EnemyDeath : MonoBehaviour
   {
     public EnemyHealth Health;
     public EnemyAnimator Animator;
-
     public GameObject DeathFx;
+    
+    private NavMeshAgent _navMeshAgent;
 
     public event Action Happaned;
 
     private void Start()
     {
+      _navMeshAgent = GetComponent<NavMeshAgent>();
+
       Health.HealthChanged += OnHealthChanged;
     }
 
@@ -36,6 +40,8 @@ namespace CodeBase.Enemy
       
       Animator.PlayDeath();
       SpawnDeathFx();
+
+      _navMeshAgent.speed = 0;
 
       StartCoroutine(DestroyTimer());
       
