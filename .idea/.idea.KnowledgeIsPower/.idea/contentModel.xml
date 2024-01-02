@@ -63,7 +63,9 @@
               <e p="IAssetProvider.cs" t="Include" />
             </e>
             <e p="Factory" t="Include">
+              <e p="EnemyFactory.cs" t="Include" />
               <e p="GameFactory.cs" t="Include" />
+              <e p="IEnemyFactory.cs" t="Include" />
               <e p="IGameFactory.cs" t="Include" />
             </e>
             <e p="Game.cs" t="Include" />

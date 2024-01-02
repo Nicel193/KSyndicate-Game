@@ -14,14 +14,14 @@ namespace CodeBase.Enemy
         [SerializeField] private EnemyType enemyType;
         [SerializeField] private bool _stain;
         
-        private IGameFactory _gameFactory;
         private EnemyDeath _enemyDeath;
+        private IEnemyFactory _enemyFactory;
         private string _id;
 
         private void Awake()
         {
             _id = GetComponent<UniqueId>().Id;
-            _gameFactory = AllServices.Container.Single<IGameFactory>();
+            _enemyFactory = AllServices.Container.Single<IEnemyFactory>();
         }
 
         public void LoadProgress(PlayerProgress progress)
@@ -32,7 +32,7 @@ namespace CodeBase.Enemy
 
         public void Spawn()
         {
-            GameObject monster = _gameFactory.CreateMonster(enemyType, transform);
+            GameObject monster = _enemyFactory.CreateMonster(enemyType, transform);
 
             _enemyDeath = monster.GetComponent<EnemyDeath>();
             _enemyDeath.Happaned += Slay;
