@@ -1,6 +1,8 @@
 ﻿using CodeBase.Data;
 using CodeBase.Enemy;
+using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;
+using CodeBase.Logic.Loot;
 using CodeBase.UI;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,13 +13,16 @@ namespace CodeBase.Infrastructure.Factory
     {
         private readonly IStaticDataService _staticDataService;
         private readonly IGameFactory _gameFactory;
+        private readonly ISavedProgressLocator _savedProgressLocator;
 
-        public EnemyFactory(IStaticDataService staticDataService, IGameFactory gameFactory)
+        public EnemyFactory(IStaticDataService staticDataService, IGameFactory gameFactory,
+            ISavedProgressLocator savedProgressLocator)
         {
             _staticDataService = staticDataService;
             _gameFactory = gameFactory;
+            _savedProgressLocator = savedProgressLocator;
         }
-        
+
         public GameObject CreateMonster(EnemyType enemyType, Transform parent)
         {
             _staticDataService.TryGetMonsterData(enemyType, out MonstersStaticData monstersStaticData);
@@ -34,16 +39,32 @@ namespace CodeBase.Infrastructure.Factory
             monster.GetComponent<AgentMoveToPlayer>().Construct(hero);
             monster.GetComponent<NavMeshAgent>().speed = monstersStaticData.Speed;
 
+            monster.GetComponent<RotateToHero>()?.Construct(hero);
+
+            InitAttack(monster, hero, monstersStaticData);
+            InitLootSpawner(monster, parent.gameObject, monstersStaticData);
+
+            return monster;
+        }
+
+        private static void InitAttack(GameObject monster, Transform hero, MonstersStaticData monstersStaticData)
+        {
             Attack attack = monster.GetComponent<Attack>();
             attack.Construct(hero);
             attack.Cleavage = monstersStaticData.Cleavage;
             attack.Damage = monstersStaticData.Damage;
             attack.AttackCooldown = monstersStaticData.AttackCooldown;
             attack.EffectiveDistance = monstersStaticData.EffectiveDistance;
+        }
 
-            monster.GetComponent<RotateToHero>()?.Construct(hero);
-
-            return monster;
+        private void InitLootSpawner(GameObject monster, GameObject monsterSpawner,
+            MonstersStaticData monstersStaticData)
+        {
+            if (monsterSpawner.TryGetComponent(out LootSpawner lootSpawner))
+            {
+                lootSpawner.Construct(monster.GetComponent<EnemyDeath>(), monstersStaticData.MaxLoot,
+                    monstersStaticData.MinLoot);
+            }
         }
     }
 }

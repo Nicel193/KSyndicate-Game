@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 
 namespace CodeBase.Data
 {
@@ -7,6 +8,11 @@ namespace CodeBase.Data
   {
     public string Level;
     public Vector3Data Position;
+
+    public PositionOnLevel()
+    {
+      
+    }
 
     public PositionOnLevel(string level, Vector3Data position)
     {

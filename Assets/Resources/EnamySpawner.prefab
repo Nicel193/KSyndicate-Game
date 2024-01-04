@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8936533934579461381}
   - component: {fileID: 8950945485024109534}
+  - component: {fileID: 1684123210739959603}
   - component: {fileID: 470855051447607760}
   m_Layer: 0
   m_Name: EnamySpawner
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 0
   _stain: 0
+--- !u!114 &1684123210739959603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7976707120413273171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f9d42f90713164db7893ff03062ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDeath: {fileID: 0}
 --- !u!114 &470855051447607760
 MonoBehaviour:
   m_ObjectHideFlags: 0

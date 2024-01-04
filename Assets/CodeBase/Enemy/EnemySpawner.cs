@@ -1,5 +1,4 @@
-﻿using System;
-using CodeBase.Data;
+﻿using CodeBase.Data;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
@@ -13,7 +12,7 @@ namespace CodeBase.Enemy
     {
         [SerializeField] private EnemyType enemyType;
         [SerializeField] private bool _stain;
-        
+
         private EnemyDeath _enemyDeath;
         private IEnemyFactory _enemyFactory;
         private string _id;
@@ -24,23 +23,12 @@ namespace CodeBase.Enemy
             _enemyFactory = AllServices.Container.Single<IEnemyFactory>();
         }
 
-        public void LoadProgress(PlayerProgress progress)
-        {
-            if (progress.KillData.ClearedSpawners.Contains(_id)) _stain = true;
-            else Spawn();
-        }
-
-        public void Spawn()
+        private void Spawn()
         {
             GameObject monster = _enemyFactory.CreateMonster(enemyType, transform);
 
             _enemyDeath = monster.GetComponent<EnemyDeath>();
             _enemyDeath.Happaned += Slay;
-        }
-
-        public void UpdateProgress(PlayerProgress progress)
-        {
-            if (_stain) progress.KillData.ClearedSpawners.Add(_id);
         }
 
         private void Slay()
@@ -49,5 +37,25 @@ namespace CodeBase.Enemy
 
             _stain = true;
         }
+
+        #region SaveLoad
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            if (progress.KillData.ClearedSpawners.Contains(_id)) _stain = true;
+            else Spawn();
+        }
+
+        public void UpdateProgress(PlayerProgress progress)
+        {
+            if (!_stain) return;
+
+            if (!progress.KillData.ClearedSpawners.Contains(_id))
+            {
+                progress.KillData.ClearedSpawners.Add(_id);
+            }
+        }
+
+        #endregion
     }
 }

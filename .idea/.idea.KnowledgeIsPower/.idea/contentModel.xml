@@ -16,14 +16,18 @@
           <e p="Constants.cs" t="Include" />
           <e p="Data" t="Include">
             <e p="DataExtensions.cs" t="Include" />
-            <e p="IStaticDataService.cs" t="Include" />
+            <e p="DroppedLootData.cs" t="Include" />
             <e p="KillData.cs" t="Include" />
-            <e p="MonstersStaticData.cs" t="Include" />
+            <e p="LootData.cs" t="Include" />
             <e p="PlayerProgress.cs" t="Include" />
-            <e p="PlayerStaticData.cs" t="Include" />
             <e p="PositionOnLevel.cs" t="Include" />
             <e p="State.cs" t="Include" />
-            <e p="StaticDataService.cs" t="Include" />
+            <e p="Static" t="Include">
+              <e p="IStaticDataService.cs" t="Include" />
+              <e p="MonstersStaticData.cs" t="Include" />
+              <e p="PlayerStaticData.cs" t="Include" />
+              <e p="StaticDataService.cs" t="Include" />
+            </e>
             <e p="Stats.cs" t="Include" />
             <e p="Vector3Data.cs" t="Include" />
             <e p="WorldData.cs" t="Include" />
@@ -56,6 +60,7 @@
             <e p="HeroHealth.cs" t="Include" />
             <e p="HeroMove.cs" t="Include" />
           </e>
+          <e p="IInstantiateTool.cs" t="Include" />
           <e p="Infrastructure" t="Include">
             <e p="AssetManagement" t="Include">
               <e p="AssetPath.cs" t="Include" />
@@ -67,6 +72,8 @@
               <e p="GameFactory.cs" t="Include" />
               <e p="IEnemyFactory.cs" t="Include" />
               <e p="IGameFactory.cs" t="Include" />
+              <e p="ILootFactory.cs" t="Include" />
+              <e p="LootFactory.cs" t="Include" />
             </e>
             <e p="Game.cs" t="Include" />
             <e p="GameBootstrapper.cs" t="Include" />
@@ -98,12 +105,18 @@
               <e p="LoadProgressState.cs" t="Include" />
             </e>
           </e>
+          <e p="InstantiateTool.cs" t="Include" />
           <e p="Logic" t="Include">
             <e p="AnimatorState.cs" t="Include" />
             <e p="AnimatorStateReporter.cs" t="Include" />
             <e p="IAnimationStateReader.cs" t="Include" />
             <e p="IHealth.cs" t="Include" />
             <e p="LoadingCurtain.cs" t="Include" />
+            <e p="Loot" t="Include">
+              <e p="Loot.cs" t="Include" />
+              <e p="LootPiece.cs" t="Include" />
+              <e p="LootSpawner.cs" t="Include" />
+            </e>
             <e p="SaveTrigger.cs" t="Include" />
             <e p="UniqueId.cs" t="Include" />
           </e>
@@ -119,6 +132,7 @@
             <e p="ActorUI.cs" t="Include" />
             <e p="HpBar.cs" t="Include" />
             <e p="LookAtCamera.cs" t="Include" />
+            <e p="LootCounter.cs" t="Include" />
           </e>
         </e>
         <e p="Plugins" t="Include">

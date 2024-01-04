@@ -4,6 +4,7 @@ using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;
+using CodeBase.Logic.Loot;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.States
@@ -70,9 +71,10 @@ namespace CodeBase.Infrastructure.States
             foreach (var spawner in GameObject.FindGameObjectsWithTag(EnemySpawnerTag))
             {
                 if (spawner.TryGetComponent(out EnemySpawner enemySpawner))
-                {
                     _savedProgressLocator.Register(enemySpawner);
-                }
+
+                if (spawner.TryGetComponent(out LootSpawner lootSpawner))
+                    _savedProgressLocator.Register(lootSpawner);
             }
         }
 

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Lich
   m_EditorClassIdentifier: 
   EnemyType: 0
+  MaxLoot: 4
+  MinLoot: 1
   HP: 10
   AttackCooldown: 3
   Cleavage: 0.5

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Golem
   m_EditorClassIdentifier: 
   EnemyType: 1
+  MaxLoot: 10
+  MinLoot: 5
   HP: 100
   AttackCooldown: 1
   Cleavage: 0.5

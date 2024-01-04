@@ -7,7 +7,9 @@ namespace CodeBase.Data
     public class MonstersStaticData : ScriptableObject
     {
         public EnemyType EnemyType;
-        
+
+        public int MaxLoot;
+        public int MinLoot;
         public float HP;
         public float AttackCooldown = 3.0f;
         public float Cleavage = 0.5f;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Newtonsoft.Json;
 
 namespace CodeBase.Data
 {
@@ -22,9 +23,9 @@ namespace CodeBase.Data
     }
 
     public static string ToJson(this object obj) => 
-      JsonUtility.ToJson(obj);
+      JsonConvert.SerializeObject(obj);
 
     public static T ToDeserialized<T>(this string json) =>
-      JsonUtility.FromJson<T>(json);
+      JsonConvert.DeserializeObject<T>(json);
   }
 }

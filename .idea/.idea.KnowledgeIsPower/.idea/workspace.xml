@@ -25,19 +25,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfec5ffe-235a-40ee-b750-ce77fb338c86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/ISavedProgressLocator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/ISavedProgressLocator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SavedProgressLocator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SavedProgressLocator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/DroppedLootData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/DroppedLootData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/LootData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/LootData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/IInstantiateTool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/IInstantiateTool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/ILootFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/ILootFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/LootFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/LootFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/InstantiateTool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/InstantiateTool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/Loot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/Loot.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootPiece.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootPiece.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/LootCounter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/LootCounter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/DataExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/DataExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/IStaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/IStaticDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/IStaticDataService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/IStaticDataService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/MonstersStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/MonstersStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/MonstersStaticData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/MonstersStaticData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/PlayerStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerStaticData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/PlayerStaticData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/PositionOnLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/PositionOnLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/StaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/StaticDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/StaticDataService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/StaticDataService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/WorldData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/WorldData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Enemy/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Enemy/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/EnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/EnemyFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IGameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AllServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AllServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SaveLoadService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SaveLoadService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/EnamySpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/EnamySpawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Lich/Prefabs/Base.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Enemies/Lich/Prefabs/Base.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hud/Hud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Hud/Hud.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Monsters/Golem.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Monsters/Golem.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Monsters/Lich.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Monsters/Lich.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,39 +94,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://E:/MyGames/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/c2/ea818fe4/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/105DA115-9EC9-496A-B931-0694C7B11DD2/18/01190a94/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Data/PlayerStaticData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Data/Static/PlayerStaticData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Logic/LoadingCurtain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/22/885161cb/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/MyGames/KnowledgeIsPower/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Services/PersistentProgress/ILoadebleProgress.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/SaveTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/DataExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/SceneLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/WorldData.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PositionOnLevel.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Editor/Tools.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameBootstrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/Vector3Data.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Services/SaveLoad/SaveLoadService.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/StateMachine/IState.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/StateMachine/IPayloadState.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/DependencyResolver.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/StateMachine/GameStateMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/ServiceLocator.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/SceneLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Enemies/EnemyAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnamySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Editor/EnemySpawnerEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/UniqueId.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/KillData.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Editor/UniqueIdEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Enemy/AgentMoveToPlayer.cs" />
@@ -94,7 +118,6 @@
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameRunner.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Enemy/EnemyType.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Enemy/EnemyDeath.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/MonstersStaticData.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/ActorUI.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Hero/HeroMove.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Hero/HeroDeath.cs" />
@@ -102,19 +125,37 @@
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadProgressState.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/IStaticDataService.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/StaticDataService.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Enemy/EnemySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IEnemyFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/EnemyFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/SavedProgressLocator.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SavedProgressLocator.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/ISavedProgressLocator.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SaveLoadService.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IGameFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/InstantiateTool.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/IInstantiateTool.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetPath.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AllServices.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/ILootFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/MonstersStaticData.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/LootSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/LootFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/Loot.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/EnemyFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SaveLoadService.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/DataExtensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/LootDataIterator.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/WorldData.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/LootCounter.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PositionOnLevel.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Enemy/EnemySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/LootData.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootPiece.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootSpawner.cs" />
       </list>
     </option>
   </component>
@@ -135,19 +176,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17516">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12168">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17516" />
+      <option name="pid" value="12168" />
       <option name="selectedOptions">
         <set />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="17516">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="17516" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -180,6 +221,9 @@
       <workItem from="1704199588450" duration="5939000" />
       <workItem from="1704210438992" duration="219000" />
       <workItem from="1704211044143" duration="8042000" />
+      <workItem from="1704282028309" duration="17302000" />
+      <workItem from="1704375326575" duration="6865000" />
+      <workItem from="1704403552336" duration="4459000" />
     </task>
     <task id="LOCAL-00001" summary="end second lesson">
       <created>1702832382459</created>
@@ -278,10 +322,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add enemy factory" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="410" height="436" key="DebuggerActiveHint" timestamp="1702828529515">
+    <state width="570" height="436" key="DebuggerActiveHint" timestamp="1704401876227">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="410" height="436" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1702828529515" />
+    <state width="570" height="436" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1704401876227" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1703198887825">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -290,93 +334,129 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="314" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1702826037421" />
-    <state width="1537" height="203" key="GridCell.Tab.0.bottom" timestamp="1704211243564">
+    <state width="1537" height="203" key="GridCell.Tab.0.bottom" timestamp="1704405110150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1704211243564" />
-    <state width="1537" height="203" key="GridCell.Tab.0.center" timestamp="1704211243564">
+    <state width="1537" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1704405110150" />
+    <state width="1537" height="203" key="GridCell.Tab.0.center" timestamp="1704405110150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1704211243564" />
-    <state width="1537" height="203" key="GridCell.Tab.0.left" timestamp="1704211243564">
+    <state width="1537" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1704405110150" />
+    <state width="1537" height="203" key="GridCell.Tab.0.left" timestamp="1704405110149">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1704211243564" />
-    <state width="1537" height="203" key="GridCell.Tab.0.right" timestamp="1704211243564">
+    <state width="1537" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1704405110149" />
+    <state width="1537" height="203" key="GridCell.Tab.0.right" timestamp="1704405110150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1704211243564" />
-    <state width="1537" height="203" key="GridCell.Tab.1.bottom" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1704405110150" />
+    <state width="1537" height="203" key="GridCell.Tab.1.bottom" timestamp="1704403128776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state width="1537" height="203" key="GridCell.Tab.1.center" timestamp="1704211243328">
+    <state width="1537" height="203" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1704403128776" />
+    <state width="1537" height="203" key="GridCell.Tab.1.center" timestamp="1704403128776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1704211243328" />
-    <state width="1537" height="203" key="GridCell.Tab.1.left" timestamp="1704211243328">
+    <state width="1537" height="203" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1704403128776" />
+    <state width="1537" height="203" key="GridCell.Tab.1.left" timestamp="1704403128776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1704211243328" />
-    <state width="1537" height="203" key="GridCell.Tab.1.right" timestamp="1704211243328">
+    <state width="1537" height="203" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1704403128776" />
+    <state width="1537" height="203" key="GridCell.Tab.1.right" timestamp="1704403128776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1704211243328" />
-    <state width="1537" height="203" key="GridCell.Tab.2.bottom" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1704403128776" />
+    <state width="1537" height="203" key="GridCell.Tab.2.bottom" timestamp="1704403128776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state width="1537" height="203" key="GridCell.Tab.2.center" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1704403128776" />
+    <state width="1537" height="203" key="GridCell.Tab.2.center" timestamp="1704403128776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state width="1537" height="203" key="GridCell.Tab.2.left" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1704403128776" />
+    <state width="1537" height="203" key="GridCell.Tab.2.left" timestamp="1704403128776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state width="1537" height="203" key="GridCell.Tab.2.right" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1704403128776" />
+    <state width="1537" height="203" key="GridCell.Tab.2.right" timestamp="1704403128776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state width="1537" height="203" key="GridCell.Tab.3.bottom" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1704403128776" />
+    <state width="1537" height="203" key="GridCell.Tab.3.bottom" timestamp="1704403128777">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state width="1537" height="203" key="GridCell.Tab.3.center" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1704403128777" />
+    <state width="1537" height="203" key="GridCell.Tab.3.center" timestamp="1704403128777">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state width="1537" height="203" key="GridCell.Tab.3.left" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1704403128777" />
+    <state width="1537" height="203" key="GridCell.Tab.3.left" timestamp="1704403128777">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state width="1537" height="203" key="GridCell.Tab.3.right" timestamp="1704211243329">
+    <state width="1537" height="203" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1704403128777" />
+    <state width="1537" height="203" key="GridCell.Tab.3.right" timestamp="1704403128777">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="203" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1704211243329" />
-    <state x="597" y="86" key="RiderGenerateDialog" timestamp="1704202474915">
+    <state width="1537" height="203" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1704403128777" />
+    <state x="597" y="86" key="RiderGenerateDialog" timestamp="1704312883902">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="597" y="86" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1704202474915" />
+    <state x="597" y="86" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1704312883902" />
     <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1704235987029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1704235987029" />
-    <state x="449" y="116" width="705" height="654" key="find.popup" timestamp="1703879616957">
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1704405043058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="116" width="705" height="654" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1703879616957" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1704203234019">
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1704405043058" />
+    <state x="449" y="116" width="705" height="654" key="find.popup" timestamp="1704294160137">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1704203234019" />
+    <state x="449" y="116" width="705" height="654" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1704294160137" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1704293876556">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1704293876556" />
     <state x="549" y="217" key="save.file.as.template.dialog" timestamp="1702816094796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="217" key="save.file.as.template.dialog/0.0.1536.824@0.0.1536.824" timestamp="1702816094796" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1704227994091">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1704315578280">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1704227994091" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1704315578280" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SaveLoadService.cs</url>
+          <line>24</line>
+          <properties documentPath="E:\MyGames\KnowledgeIsPower\Assets\CodeBase\Infrastructure\Services\SaveLoad\SaveLoadService.cs" initialLine="24">
+            <startOffsets>
+              <option value="816" />
+            </startOffsets>
+            <endOffsets>
+              <option value="865" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/SaveLoad/SaveLoadService.cs</url>
+          <line>21</line>
+          <properties documentPath="E:\MyGames\KnowledgeIsPower\Assets\CodeBase\Infrastructure\Services\SaveLoad\SaveLoadService.cs" initialLine="21">
+            <startOffsets>
+              <option value="662" />
+            </startOffsets>
+            <endOffsets>
+              <option value="742" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
