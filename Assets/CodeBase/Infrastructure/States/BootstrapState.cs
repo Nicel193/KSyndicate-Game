@@ -71,7 +71,7 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(_services.Single<IStaticDataService>(),
                 _services.Single<IGameFactory>(), savedProgressLocator));
             _services.RegisterSingle<ISpawnerFactory>(new SpawnerFactory(instantiateTool,
-                _services.Single<IEnemyFactory>()));
+                _services.Single<IEnemyFactory>(), _services.Single<ILootFactory>()));
         }
 
         private void RegisterStaticData()

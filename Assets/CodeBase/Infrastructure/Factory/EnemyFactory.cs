@@ -62,7 +62,7 @@ namespace CodeBase.Infrastructure.Factory
         {
             if (monsterSpawner.TryGetComponent(out LootSpawner lootSpawner))
             {
-                lootSpawner.Construct(monster.GetComponent<EnemyDeath>(), monstersStaticData.MaxLoot,
+                lootSpawner.Initialize(monster.GetComponent<EnemyDeath>(), monstersStaticData.MaxLoot,
                     monstersStaticData.MinLoot);
             }
         }

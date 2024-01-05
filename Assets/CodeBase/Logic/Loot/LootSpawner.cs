@@ -11,22 +11,22 @@ namespace CodeBase.Logic.Loot
     [RequireComponent(typeof(SpawnPoint))]
     public class LootSpawner : MonoBehaviour, ISavedProgress
     {
+        public string Id;
+        
         private EnemyDeath _enemyDeath;
         private ILootFactory _lootFactory;
         private Loot _loot;
-        private string _id;
         private bool _droppedLoot;
         private bool _isPicked;
 
-        private void Start()
-        {
-            _lootFactory = AllServices.Container.Single<ILootFactory>();
-            _id = GetComponent<UniqueId>().Id;
-        }
-
         private void OnDestroy() => DeathUnsubscribe();
 
-        public void Construct(EnemyDeath enemyDeath, int maxLoot, int minLoot)
+        public void Construct(ILootFactory lootFactory)
+        {
+            _lootFactory = AllServices.Container.Single<ILootFactory>();
+        }
+
+        public void Initialize(EnemyDeath enemyDeath, int maxLoot, int minLoot)
         {
             _loot = new Loot()
             {
@@ -60,7 +60,7 @@ namespace CodeBase.Logic.Loot
 
         public void LoadProgress(PlayerProgress progress)
         {
-            if (progress.DropedLootData.LootsData.TryGetValue(_id, out DroppedLootData.Data data))
+            if (progress.DropedLootData.LootsData.TryGetValue(Id, out DroppedLootData.Data data))
             {
                 _loot = new Loot() {Value = data.Count};
 
@@ -74,13 +74,13 @@ namespace CodeBase.Logic.Loot
 
             if (_isPicked)
             {
-                progress.DropedLootData.LootsData.Remove(_id);
+                progress.DropedLootData.LootsData.Remove(Id);
                 return;
             }
             
-            if (!progress.DropedLootData.LootsData.ContainsKey(_id))
+            if (!progress.DropedLootData.LootsData.ContainsKey(Id))
             {
-                progress.DropedLootData.LootsData.Add(_id, new DroppedLootData.Data(
+                progress.DropedLootData.LootsData.Add(Id, new DroppedLootData.Data(
                     this.transform.position.AsVectorData(), _loot.Value));
             }
         }
