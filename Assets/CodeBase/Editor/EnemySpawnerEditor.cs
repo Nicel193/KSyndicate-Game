@@ -10,8 +10,11 @@ namespace CodeBase.Editor
         [DrawGizmo(GizmoType.Active | GizmoType.Pickable | GizmoType.NonSelected)]
         public static void DrawCustomGizmo(SpawnMarker spawnPoint, GizmoType gizmoType)
         {
+            Vector3 position = spawnPoint.transform.position;
+
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(spawnPoint.transform.position, 0.5f);
+            Gizmos.DrawSphere(position, 0.1f);
+            Handles.Label(position + Vector3.up * 0.75f, spawnPoint.EnemyType.ToString());
         }
     }
 }
