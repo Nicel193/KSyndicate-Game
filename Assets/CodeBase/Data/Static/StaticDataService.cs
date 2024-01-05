@@ -4,19 +4,25 @@ using System.Linq;
 using CodeBase.Enemy;
 using UnityEngine;
 
-namespace CodeBase.Data
+namespace CodeBase.Data.Static
 {
     public class StaticDataService : IStaticDataService
     {
+        private const string AssetsResourcesLevelData = "StaticData/Levels";
         private const string AssetsResourcesMonsterData = "StaticData/Monsters";
         private const string AssetsResourcesPlayerData = "StaticData";
 
         private Dictionary<EnemyType, MonstersStaticData> _monsters;
+        private Dictionary<string, LevelStaticData> _levelStaticData;
+
 
         public void LoadMonsters()
         {
             _monsters = Resources.LoadAll<MonstersStaticData>(AssetsResourcesMonsterData)
                 .ToDictionary(x => x.EnemyType, x => x);
+
+            _levelStaticData = Resources.LoadAll<LevelStaticData>(AssetsResourcesLevelData)
+                .ToDictionary(x => x.LevelKey, x => x);
         }
 
         public bool TryGetMonsterData(EnemyType enemyType, out MonstersStaticData monstersStaticData)
@@ -28,12 +34,18 @@ namespace CodeBase.Data
 
         public PlayerStaticData GetPlayerData()
         {
-            PlayerStaticData playerStaticData = Resources.LoadAll<PlayerStaticData>(AssetsResourcesPlayerData).ToArray()[0];
+            PlayerStaticData playerStaticData =
+                Resources.LoadAll<PlayerStaticData>(AssetsResourcesPlayerData).ToArray()[0];
 
-            if(playerStaticData == null)
+            if (playerStaticData == null)
                 throw new Exception("Can`t load player data");
-            
+
             return playerStaticData;
+        }
+
+        public LevelStaticData ForLevel(string sceneKey)
+        {
+            return _levelStaticData.TryGetValue(sceneKey, out LevelStaticData levelStaticData) ? levelStaticData : null;
         }
     }
 }

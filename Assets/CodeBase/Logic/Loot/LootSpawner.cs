@@ -3,11 +3,12 @@ using CodeBase.Enemy;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
+using CodeBase.Logic.EnemySpawners;
 using UnityEngine;
 
 namespace CodeBase.Logic.Loot
 {
-    [RequireComponent(typeof(EnemySpawner))]
+    [RequireComponent(typeof(SpawnPoint))]
     public class LootSpawner : MonoBehaviour, ISavedProgress
     {
         private EnemyDeath _enemyDeath;

@@ -1,4 +1,5 @@
-﻿using CodeBase.Enemy;
+﻿using CodeBase.Data.Static;
+using CodeBase.Enemy;
 using CodeBase.Infrastructure.Services;
 
 namespace CodeBase.Data
@@ -8,5 +9,6 @@ namespace CodeBase.Data
         void LoadMonsters();
         bool TryGetMonsterData(EnemyType enemyType, out MonstersStaticData monstersStaticData);
         PlayerStaticData GetPlayerData();
+        LevelStaticData ForLevel(string sceneKey);
     }
 }

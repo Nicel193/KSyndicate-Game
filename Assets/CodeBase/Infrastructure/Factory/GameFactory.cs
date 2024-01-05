@@ -1,6 +1,8 @@
+using CodeBase.Enemy;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Logic;
+using CodeBase.Logic.EnemySpawners;
 using CodeBase.UI;
 using UnityEngine;
 
@@ -10,6 +12,7 @@ namespace CodeBase.Infrastructure.Factory
     {
         private readonly IInstantiateTool _instantiateTool;
         private readonly IPersistentProgressService _progressService;
+        
         public GameObject HeroGameObject { get; private set; }
 
         public GameFactory(IInstantiateTool instantiateTool, IPersistentProgressService progressService)
@@ -26,7 +29,7 @@ namespace CodeBase.Infrastructure.Factory
             
             return HeroGameObject;
         }
-
+        
         private void InitHud(GameObject hero)
         {
             GameObject hud = _instantiateTool.InstantiateRegistered(AssetPath.HudPath);

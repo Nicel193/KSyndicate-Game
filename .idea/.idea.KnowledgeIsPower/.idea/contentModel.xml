@@ -23,7 +23,9 @@
             <e p="PositionOnLevel.cs" t="Include" />
             <e p="State.cs" t="Include" />
             <e p="Static" t="Include">
+              <e p="EnemySpawnerData.cs" t="Include" />
               <e p="IStaticDataService.cs" t="Include" />
+              <e p="LevelStaticData.cs" t="Include" />
               <e p="MonstersStaticData.cs" t="Include" />
               <e p="PlayerStaticData.cs" t="Include" />
               <e p="StaticDataService.cs" t="Include" />
@@ -34,6 +36,7 @@
           </e>
           <e p="Editor" t="Include">
             <e p="EnemySpawnerEditor.cs" t="Include" />
+            <e p="LevelStaticDataEditor.cs" t="Include" />
             <e p="Tools.cs" t="Include" />
             <e p="UniqueIdEditor.cs" t="Include" />
           </e>
@@ -46,7 +49,6 @@
             <e p="EnemyAnimator.cs" t="Include" />
             <e p="EnemyDeath.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
-            <e p="EnemySpawner.cs" t="Include" />
             <e p="EnemyType.cs" t="Include" />
             <e p="Follow.cs" t="Include" />
             <e p="PhysicsDebug.cs" t="Include" />
@@ -73,7 +75,9 @@
               <e p="IEnemyFactory.cs" t="Include" />
               <e p="IGameFactory.cs" t="Include" />
               <e p="ILootFactory.cs" t="Include" />
+              <e p="ISpawnerFactory.cs" t="Include" />
               <e p="LootFactory.cs" t="Include" />
+              <e p="SpawnerFactory.cs" t="Include" />
             </e>
             <e p="Game.cs" t="Include" />
             <e p="GameBootstrapper.cs" t="Include" />
@@ -109,6 +113,10 @@
           <e p="Logic" t="Include">
             <e p="AnimatorState.cs" t="Include" />
             <e p="AnimatorStateReporter.cs" t="Include" />
+            <e p="EnemySpawners" t="Include">
+              <e p="SpawnMarker.cs" t="Include" />
+              <e p="SpawnPoint.cs" t="Include" />
+            </e>
             <e p="IAnimationStateReader.cs" t="Include" />
             <e p="IHealth.cs" t="Include" />
             <e p="LoadingCurtain.cs" t="Include" />

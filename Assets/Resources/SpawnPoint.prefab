@@ -10,11 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8936533934579461381}
   - component: {fileID: 8950945485024109534}
-  - component: {fileID: 1684123210739959603}
-  - component: {fileID: 470855051447607760}
   m_Layer: 0
-  m_Name: EnamySpawner
-  m_TagString: EnemySpawner
+  m_Name: SpawnPoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,29 +45,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 0
   _stain: 0
---- !u!114 &1684123210739959603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7976707120413273171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f9d42f90713164db7893ff03062ecd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyDeath: {fileID: 0}
---- !u!114 &470855051447607760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7976707120413273171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e0f999a354848949745ac724a05875b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Id: EnamySpawner_8c07e397-2fe5-4f9c-9835-13fb2247aa92

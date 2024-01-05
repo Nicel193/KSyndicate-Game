@@ -1,4 +1,5 @@
 ﻿using CodeBase.Data;
+using CodeBase.Data.Static;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services;
@@ -61,13 +62,16 @@ namespace CodeBase.Infrastructure.States
         {
             IPersistentProgressService persistentProgressService = _services.Single<IPersistentProgressService>();
             IInstantiateTool instantiateTool = _services.Single<IInstantiateTool>();
+            ISavedProgressLocator savedProgressLocator = _services.Single<ISavedProgressLocator>();
 
             _services.RegisterSingle<IGameFactory>(new GameFactory(instantiateTool,
                 persistentProgressService));
             _services.RegisterSingle<ILootFactory>(new LootFactory(instantiateTool,
                 persistentProgressService));
             _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(_services.Single<IStaticDataService>(),
-                _services.Single<IGameFactory>(), _services.Single<ISavedProgressLocator>()));
+                _services.Single<IGameFactory>(), savedProgressLocator));
+            _services.RegisterSingle<ISpawnerFactory>(new SpawnerFactory(instantiateTool,
+                _services.Single<IEnemyFactory>()));
         }
 
         private void RegisterStaticData()

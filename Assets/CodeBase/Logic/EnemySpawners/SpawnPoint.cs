@@ -1,31 +1,28 @@
 ﻿using CodeBase.Data;
+using CodeBase.Enemy;
 using CodeBase.Infrastructure.Factory;
-using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
-using CodeBase.Logic;
 using UnityEngine;
 
-namespace CodeBase.Enemy
+namespace CodeBase.Logic.EnemySpawners
 {
-    [RequireComponent(typeof(UniqueId))]
-    public class EnemySpawner : MonoBehaviour, ISavedProgress
+    public class SpawnPoint : MonoBehaviour, ISavedProgress
     {
-        [SerializeField] private EnemyType enemyType;
-        [SerializeField] private bool _stain;
-
+        public string Id;
+        public EnemyType EnemyType;
+        
         private EnemyDeath _enemyDeath;
         private IEnemyFactory _enemyFactory;
-        private string _id;
+        private bool _stain;
 
-        private void Awake()
+        public void Construct(IEnemyFactory enemyFactory)
         {
-            _id = GetComponent<UniqueId>().Id;
-            _enemyFactory = AllServices.Container.Single<IEnemyFactory>();
+            _enemyFactory = enemyFactory;
         }
-
+        
         private void Spawn()
         {
-            GameObject monster = _enemyFactory.CreateMonster(enemyType, transform);
+            GameObject monster = _enemyFactory.CreateMonster(EnemyType, transform);
 
             _enemyDeath = monster.GetComponent<EnemyDeath>();
             _enemyDeath.Happaned += Slay;
@@ -42,7 +39,7 @@ namespace CodeBase.Enemy
 
         public void LoadProgress(PlayerProgress progress)
         {
-            if (progress.KillData.ClearedSpawners.Contains(_id)) _stain = true;
+            if (progress.KillData.ClearedSpawners.Contains(Id)) _stain = true;
             else Spawn();
         }
 
@@ -50,9 +47,9 @@ namespace CodeBase.Enemy
         {
             if (!_stain) return;
 
-            if (!progress.KillData.ClearedSpawners.Contains(_id))
+            if (!progress.KillData.ClearedSpawners.Contains(Id))
             {
-                progress.KillData.ClearedSpawners.Add(_id);
+                progress.KillData.ClearedSpawners.Add(Id);
             }
         }
 

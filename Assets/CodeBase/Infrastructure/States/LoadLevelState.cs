@@ -1,11 +1,15 @@
 ﻿using CodeBase.CameraLogic;
+using CodeBase.Data;
+using CodeBase.Data.Static;
 using CodeBase.Enemy;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;
+using CodeBase.Logic.EnemySpawners;
 using CodeBase.Logic.Loot;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CodeBase.Infrastructure.States
 {
@@ -20,10 +24,12 @@ namespace CodeBase.Infrastructure.States
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _progressService;
         private readonly ISavedProgressLocator _savedProgressLocator;
+        private readonly IStaticDataService _staticData;
+        private readonly ISpawnerFactory _spawnerFactory;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
             IGameFactory gameFactory, IPersistentProgressService progressService,
-            ISavedProgressLocator savedProgressLocator)
+            ISavedProgressLocator savedProgressLocator, IStaticDataService staticData, ISpawnerFactory spawnerFactory)
         {
             _stateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
@@ -31,6 +37,8 @@ namespace CodeBase.Infrastructure.States
             _gameFactory = gameFactory;
             _progressService = progressService;
             _savedProgressLocator = savedProgressLocator;
+            _staticData = staticData;
+            _spawnerFactory = spawnerFactory;
         }
 
         public void Enter(string sceneName)
@@ -60,7 +68,11 @@ namespace CodeBase.Infrastructure.States
         private void InitGameWorld()
         {
             InitSpawners();
+            InitPlayer();
+        }
 
+        private void InitPlayer()
+        {
             GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
 
             CameraFollow(hero);
@@ -68,13 +80,13 @@ namespace CodeBase.Infrastructure.States
 
         private void InitSpawners()
         {
-            foreach (var spawner in GameObject.FindGameObjectsWithTag(EnemySpawnerTag))
-            {
-                if (spawner.TryGetComponent(out EnemySpawner enemySpawner))
-                    _savedProgressLocator.Register(enemySpawner);
+            string sceneKey = SceneManager.GetActiveScene().name;
 
-                if (spawner.TryGetComponent(out LootSpawner lootSpawner))
-                    _savedProgressLocator.Register(lootSpawner);
+            LevelStaticData levelStaticData = _staticData.ForLevel(sceneKey);
+
+            foreach (var enemySpawner in levelStaticData.enemySpawners)
+            {
+                _spawnerFactory.CreateEnemySpawner(enemySpawner.Position, enemySpawner.Id, enemySpawner.EnemyType);
             }
         }
 
