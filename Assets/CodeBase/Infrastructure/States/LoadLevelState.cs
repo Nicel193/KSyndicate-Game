@@ -8,6 +8,7 @@ using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;
 using CodeBase.Logic.EnemySpawners;
 using CodeBase.Logic.Loot;
+using CodeBase.UI.Services;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,10 +27,11 @@ namespace CodeBase.Infrastructure.States
         private readonly ISavedProgressLocator _savedProgressLocator;
         private readonly IStaticDataService _staticData;
         private readonly ISpawnerFactory _spawnerFactory;
+        private readonly IUIFactory _uiFactory;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
             IGameFactory gameFactory, IPersistentProgressService progressService,
-            ISavedProgressLocator savedProgressLocator, IStaticDataService staticData, ISpawnerFactory spawnerFactory)
+            ISavedProgressLocator savedProgressLocator, IStaticDataService staticData, ISpawnerFactory spawnerFactory, IUIFactory uiFactory)
         {
             _stateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
@@ -39,6 +41,7 @@ namespace CodeBase.Infrastructure.States
             _savedProgressLocator = savedProgressLocator;
             _staticData = staticData;
             _spawnerFactory = spawnerFactory;
+            _uiFactory = uiFactory;
         }
 
         public void Enter(string sceneName)
@@ -53,6 +56,7 @@ namespace CodeBase.Infrastructure.States
 
         private void OnLoaded()
         {
+            InitUIRoot();
             InitGameWorld();
             InformProgressReaders();
 
@@ -63,6 +67,11 @@ namespace CodeBase.Infrastructure.States
         {
             foreach (ISavedProgressReader progressReader in _savedProgressLocator.ProgressReaders)
                 progressReader.LoadProgress(_progressService.Progress);
+        }
+
+        private void InitUIRoot()
+        {
+            _uiFactory.CreateUIRoot();
         }
 
         private void InitGameWorld()

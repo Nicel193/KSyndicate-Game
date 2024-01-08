@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using CodeBase.Data;
+using CodeBase.Data.Static;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;
+using CodeBase.UI.Services;
 
 namespace CodeBase.Infrastructure.States
 {
@@ -22,7 +24,7 @@ namespace CodeBase.Infrastructure.States
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain,
                     services.Single<IGameFactory>(), services.Single<IPersistentProgressService>(),
                     services.Single<ISavedProgressLocator>(), services.Single<IStaticDataService>(),
-                    services.Single<ISpawnerFactory>()),
+                    services.Single<ISpawnerFactory>(), services.Single<IUIFactory>()),
                 [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IPersistentProgressService>(),
                     services.Single<ISaveLoadService>(), services.Single<IStaticDataService>()),
                 [typeof(GameLoopState)] = new GameLoopState(this),

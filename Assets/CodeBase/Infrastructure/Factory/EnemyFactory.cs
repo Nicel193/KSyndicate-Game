@@ -1,4 +1,5 @@
 ﻿using CodeBase.Data;
+using CodeBase.Data.Static;
 using CodeBase.Enemy;
 using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;

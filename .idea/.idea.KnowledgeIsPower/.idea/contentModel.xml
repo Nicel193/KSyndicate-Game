@@ -29,9 +29,11 @@
               <e p="MonstersStaticData.cs" t="Include" />
               <e p="PlayerStaticData.cs" t="Include" />
               <e p="StaticDataService.cs" t="Include" />
+              <e p="WindowStaticData.cs" t="Include" />
             </e>
             <e p="Stats.cs" t="Include" />
             <e p="Vector3Data.cs" t="Include" />
+            <e p="WindowConfig.cs" t="Include" />
             <e p="WorldData.cs" t="Include" />
           </e>
           <e p="Editor" t="Include">
@@ -137,10 +139,24 @@
             </e>
           </e>
           <e p="UI" t="Include">
-            <e p="ActorUI.cs" t="Include" />
-            <e p="HpBar.cs" t="Include" />
-            <e p="LookAtCamera.cs" t="Include" />
-            <e p="LootCounter.cs" t="Include" />
+            <e p="Elements" t="Include">
+              <e p="ActorUI.cs" t="Include" />
+              <e p="HpBar.cs" t="Include" />
+              <e p="LookAtCamera.cs" t="Include" />
+              <e p="LootCounter.cs" t="Include" />
+            </e>
+            <e p="Services" t="Include">
+              <e p="IUiFactory.cs" t="Include" />
+              <e p="IWindowService.cs" t="Include" />
+              <e p="UiFactory.cs" t="Include" />
+              <e p="WindowService.cs" t="Include" />
+              <e p="WindowType.cs" t="Include" />
+            </e>
+            <e p="Windows" t="Include">
+              <e p="OpenWindowButton.cs" t="Include" />
+              <e p="ShopWindow.cs" t="Include" />
+              <e p="WindowBase.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Plugins" t="Include">

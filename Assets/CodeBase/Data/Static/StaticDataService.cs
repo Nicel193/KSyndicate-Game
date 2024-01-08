@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Enemy;
+using CodeBase.UI.Services;
 using UnityEngine;
 
 namespace CodeBase.Data.Static
@@ -11,8 +12,10 @@ namespace CodeBase.Data.Static
         private const string AssetsResourcesLevelData = "StaticData/Levels";
         private const string AssetsResourcesMonsterData = "StaticData/Monsters";
         private const string AssetsResourcesPlayerData = "StaticData";
+        private const string AssetsResourcesWindowsData = "StaticData/Windows/WindowStaticData";
 
         private Dictionary<EnemyType, MonstersStaticData> _monsters;
+        private Dictionary<WindowType, WindowConfig> _windowConfigs;
         private Dictionary<string, LevelStaticData> _levelStaticData;
 
 
@@ -23,6 +26,10 @@ namespace CodeBase.Data.Static
 
             _levelStaticData = Resources.LoadAll<LevelStaticData>(AssetsResourcesLevelData)
                 .ToDictionary(x => x.LevelKey, x => x);
+
+            _windowConfigs = Resources.Load<WindowStaticData>(AssetsResourcesWindowsData)
+                .WindowConfigs
+                .ToDictionary(x => x.WindowType, x => x);
         }
 
         public bool TryGetMonsterData(EnemyType enemyType, out MonstersStaticData monstersStaticData)
@@ -43,9 +50,10 @@ namespace CodeBase.Data.Static
             return playerStaticData;
         }
 
-        public LevelStaticData ForLevel(string sceneKey)
-        {
-            return _levelStaticData.TryGetValue(sceneKey, out LevelStaticData levelStaticData) ? levelStaticData : null;
-        }
+        public LevelStaticData ForLevel(string sceneKey) =>
+            _levelStaticData.TryGetValue(sceneKey, out LevelStaticData levelStaticData) ? levelStaticData : null;
+
+        public WindowConfig ForWindow(WindowType windowType) =>
+            _windowConfigs.TryGetValue(windowType, out WindowConfig windowConfig) ? windowConfig : null;
     }
 }

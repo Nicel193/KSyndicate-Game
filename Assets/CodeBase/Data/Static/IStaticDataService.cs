@@ -1,8 +1,8 @@
-﻿using CodeBase.Data.Static;
-using CodeBase.Enemy;
+﻿using CodeBase.Enemy;
 using CodeBase.Infrastructure.Services;
+using CodeBase.UI.Services;
 
-namespace CodeBase.Data
+namespace CodeBase.Data.Static
 {
     public interface IStaticDataService : IService
     {
@@ -10,5 +10,6 @@ namespace CodeBase.Data
         bool TryGetMonsterData(EnemyType enemyType, out MonstersStaticData monstersStaticData);
         PlayerStaticData GetPlayerData();
         LevelStaticData ForLevel(string sceneKey);
+        WindowConfig ForWindow(WindowType windowType);
     }
 }
