@@ -23,16 +23,31 @@ namespace CodeBase.UI.Services
             _persistentProgressService = persistentProgressService;
         }
 
-        public void CreateShop()
+        public WindowBase CreateShop()
         {
-            WindowConfig config = _staticData.ForWindow(WindowType.Shop);
-            WindowBase window = Object.Instantiate(config.WindowPrefab, _uiRoot);
-            window.Construct(_persistentProgressService);
+            var window = CreateWindow(WindowType.Shop);
+
+            return window;
+        }
+
+        public WindowBase CreatePlayerStats()
+        {
+            var window = CreateWindow(WindowType.PlayerStats);
+
+            return window;
         }
 
         public void CreateUIRoot()
         {
             _uiRoot = _assetProvider.Instantiate(UIRootPath).transform;
+        }
+
+        private WindowBase CreateWindow(WindowType windowType)
+        {
+            WindowConfig config = _staticData.ForWindow(windowType);
+            WindowBase window = Object.Instantiate(config.WindowPrefab, _uiRoot);
+            window.Construct(_persistentProgressService);
+            return window;
         }
     }
 }

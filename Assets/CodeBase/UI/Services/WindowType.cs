@@ -4,5 +4,6 @@
     {
         Unknown = 0,
         Shop = 1,
+        PlayerStats = 2,
     }
 }

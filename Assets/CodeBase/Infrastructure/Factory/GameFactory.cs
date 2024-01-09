@@ -1,8 +1,6 @@
-using CodeBase.Enemy;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Logic;
-using CodeBase.Logic.EnemySpawners;
 using CodeBase.UI;
 using CodeBase.UI.Services;
 using CodeBase.UI.Windows;

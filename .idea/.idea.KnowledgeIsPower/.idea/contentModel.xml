@@ -154,6 +154,7 @@
             </e>
             <e p="Windows" t="Include">
               <e p="OpenWindowButton.cs" t="Include" />
+              <e p="PlayerStatsWindow.cs" t="Include" />
               <e p="ShopWindow.cs" t="Include" />
               <e p="WindowBase.cs" t="Include" />
             </e>

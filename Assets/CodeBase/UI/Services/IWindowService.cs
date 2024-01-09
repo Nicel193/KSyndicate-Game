@@ -4,6 +4,7 @@ namespace CodeBase.UI.Services
 {
     public interface IWindowService : IService
     {
-        void Open(WindowType windowType);
+        void Open(WindowType windowType, bool returnPage = false);
+        void Close();
     }
 }
