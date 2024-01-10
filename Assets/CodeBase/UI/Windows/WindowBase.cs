@@ -12,8 +12,8 @@ namespace CodeBase.UI.Windows
         public Button CloseButton;
 
         protected PlayerProgress playerProgress => _persistentProgressService.Progress;
-        
-        private IPersistentProgressService _persistentProgressService;
+        protected IPersistentProgressService _persistentProgressService;
+
         private IWindowService _windowService;
 
 

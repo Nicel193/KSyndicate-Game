@@ -4,6 +4,7 @@ using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.SaveLoad;
+using CodeBase.Services.Ads;
 using CodeBase.Services.Input;
 using CodeBase.UI.Services;
 using UnityEngine;
@@ -39,6 +40,7 @@ namespace CodeBase.Infrastructure.States
         private void RegisterServices()
         {
             RegisterStaticData();
+            RegisterAdsService();
 
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<ISavedProgressLocator>(new SavedProgressLocator());
@@ -49,6 +51,13 @@ namespace CodeBase.Infrastructure.States
 
             RegisterFactories();
             RegisterSaveLoad();
+        }
+
+        private void RegisterAdsService()
+        {
+            IAdsService adsService = new AdsService();
+            adsService.Initialize();
+            _services.RegisterSingle<IAdsService>(adsService);
         }
 
         private void RegisterSaveLoad()
@@ -65,8 +74,8 @@ namespace CodeBase.Infrastructure.States
             ISavedProgressLocator savedProgressLocator = _services.Single<ISavedProgressLocator>();
             IStaticDataService staticDataService = _services.Single<IStaticDataService>();
 
-            _services.RegisterSingle<IUIFactory>(new UIFactory(_services.Single<IAssetProvider>(), 
-                staticDataService, persistentProgressService));
+            _services.RegisterSingle<IUIFactory>(new UIFactory(_services.Single<IAssetProvider>(),
+                staticDataService, persistentProgressService, _services.Single<IAdsService>()));
             _services.RegisterSingle<IWindowService>(new WindowService(_services.Single<IUIFactory>()));
             _services.RegisterSingle<IGameFactory>(new GameFactory(instantiateTool,
                 persistentProgressService, _services.Single<IWindowService>()));

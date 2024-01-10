@@ -131,6 +131,10 @@
             <e p="UniqueId.cs" t="Include" />
           </e>
           <e p="Services" t="Include">
+            <e p="Ads" t="Include">
+              <e p="AdsService.cs" t="Include" />
+              <e p="IAdsService.cs" t="Include" />
+            </e>
             <e p="Input" t="Include">
               <e p="IInputService.cs" t="Include" />
               <e p="InputService.cs" t="Include" />
@@ -155,7 +159,10 @@
             <e p="Windows" t="Include">
               <e p="OpenWindowButton.cs" t="Include" />
               <e p="PlayerStatsWindow.cs" t="Include" />
-              <e p="ShopWindow.cs" t="Include" />
+              <e p="Shop" t="Include">
+                <e p="RewardedAdItem.cs" t="Include" />
+                <e p="ShopWindow.cs" t="Include" />
+              </e>
               <e p="WindowBase.cs" t="Include" />
             </e>
           </e>
