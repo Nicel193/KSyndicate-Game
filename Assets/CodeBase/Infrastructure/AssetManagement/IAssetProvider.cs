@@ -1,5 +1,7 @@
+using System.Threading.Tasks;
 using CodeBase.Infrastructure.Services;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace CodeBase.Infrastructure.AssetManagement
 {
@@ -7,5 +9,6 @@ namespace CodeBase.Infrastructure.AssetManagement
     {
         GameObject Instantiate(string path, Vector3 at);
         GameObject Instantiate(string path);
+        Task<T> Load<T>(AssetReference assetReference) where T : class;
     }
 }

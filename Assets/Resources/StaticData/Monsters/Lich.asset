@@ -21,5 +21,8 @@ MonoBehaviour:
   EffectiveDistance: 0.5
   Damage: 10
   Speed: 3
-  EnemyPrefab: {fileID: 5159685399465329419, guid: 58bfdcdcb5df542b9bd638a51d825a6c,
-    type: 3}
+  PrefabReference:
+    m_AssetGUID: 58bfdcdcb5df542b9bd638a51d825a6c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

@@ -1,12 +1,16 @@
-﻿using CodeBase.Data;
+﻿using System.Threading.Tasks;
+using CodeBase.Data;
 using CodeBase.Data.Static;
 using CodeBase.Enemy;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;
 using CodeBase.Logic.Loot;
 using CodeBase.UI;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.AI;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace CodeBase.Infrastructure.Factory
 {
@@ -15,21 +19,24 @@ namespace CodeBase.Infrastructure.Factory
         private readonly IStaticDataService _staticDataService;
         private readonly IGameFactory _gameFactory;
         private readonly ISavedProgressLocator _savedProgressLocator;
+        private readonly IAssetProvider _assetProvider;
 
         public EnemyFactory(IStaticDataService staticDataService, IGameFactory gameFactory,
-            ISavedProgressLocator savedProgressLocator)
+            ISavedProgressLocator savedProgressLocator, IAssetProvider assetProvider)
         {
             _staticDataService = staticDataService;
             _gameFactory = gameFactory;
             _savedProgressLocator = savedProgressLocator;
+            _assetProvider = assetProvider;
         }
 
-        public GameObject CreateMonster(EnemyType enemyType, Transform parent)
+        public async Task<GameObject> CreateMonster(EnemyType enemyType, Transform parent)
         {
             _staticDataService.TryGetMonsterData(enemyType, out MonstersStaticData monstersStaticData);
 
             Transform hero = _gameFactory.HeroGameObject.transform;
-            GameObject monster = Object.Instantiate(monstersStaticData.EnemyPrefab, parent.position,
+            GameObject prefab = await _assetProvider.Load<GameObject>(monstersStaticData.PrefabReference);
+            GameObject monster = Object.Instantiate(prefab, parent.position,
                 Quaternion.identity, parent);
 
             IHealth health = monster.GetComponent<IHealth>();

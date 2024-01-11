@@ -1,4 +1,5 @@
-﻿using CodeBase.Data;
+﻿using System.Threading.Tasks;
+using CodeBase.Data;
 using CodeBase.Enemy;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services.PersistentProgress;
@@ -20,9 +21,9 @@ namespace CodeBase.Logic.EnemySpawners
             _enemyFactory = enemyFactory;
         }
         
-        private void Spawn()
+        private async void Spawn()
         {
-            GameObject monster = _enemyFactory.CreateMonster(EnemyType, transform);
+            GameObject monster = await _enemyFactory.CreateMonster(EnemyType, transform);
 
             _enemyDeath = monster.GetComponent<EnemyDeath>();
             _enemyDeath.Happaned += Slay;

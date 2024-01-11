@@ -74,8 +74,9 @@ namespace CodeBase.Infrastructure.States
             IInstantiateTool instantiateTool = _services.Single<IInstantiateTool>();
             ISavedProgressLocator savedProgressLocator = _services.Single<ISavedProgressLocator>();
             IStaticDataService staticDataService = _services.Single<IStaticDataService>();
+            IAssetProvider assetProvider = _services.Single<IAssetProvider>();
 
-            _services.RegisterSingle<IUIFactory>(new UIFactory(_services.Single<IAssetProvider>(),
+            _services.RegisterSingle<IUIFactory>(new UIFactory(assetProvider,
                 staticDataService, persistentProgressService, _services.Single<IAdsService>()));
             _services.RegisterSingle<IWindowService>(new WindowService(_services.Single<IUIFactory>()));
             _services.RegisterSingle<IGameFactory>(new GameFactory(instantiateTool,
@@ -83,7 +84,7 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<ILootFactory>(new LootFactory(instantiateTool,
                 persistentProgressService));
             _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(staticDataService,
-                _services.Single<IGameFactory>(), savedProgressLocator));
+                _services.Single<IGameFactory>(), savedProgressLocator, assetProvider));
             _services.RegisterSingle<ISpawnerFactory>(new SpawnerFactory(instantiateTool,
                 _services.Single<IEnemyFactory>(), _services.Single<ILootFactory>()));
         }

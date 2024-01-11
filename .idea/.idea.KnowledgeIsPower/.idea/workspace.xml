@@ -25,24 +25,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfec5ffe-235a-40ee-b750-ce77fb338c86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/IGameStateMachine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/IGameStateMachine.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/Levels.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/Levels.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/DataExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/DataExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/LevelStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/LevelStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/LevelStaticDataEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Editor/LevelStaticDataEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IGameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/MonstersStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/Static/MonstersStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/EnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/EnemyFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IEnemyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IEnemyFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/WindowService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/WindowService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Graveyard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Graveyard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Golem/Golem.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Golem/Golem.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Lich/Prefabs/Lich.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Enemies/Lich/Prefabs/Lich.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Monsters/Golem.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Monsters/Golem.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Monsters/Lich.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Monsters/Lich.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Lesson13" />
+        <entry key="$PROJECT_DIR$" value="Lesson14" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,7 +59,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/105DA115-9EC9-496A-B931-0694C7B11DD2/18/01190a94/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://E:/MyGames/KnowledgeIsPower/Assets/Resources/Enemies/Golem/Golem.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Data/Static/PlayerStaticData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://E:/MyGames/KnowledgeIsPower/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Logic/LoadingCurtain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA496B8C-9345-4B2F-9B99-24292C19379F/22/885161cb/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Services/Ads/AdsService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -70,24 +69,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PositionOnLevel.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Enemy/EnemySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/LootData.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/EnemySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootPiece.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/Static/EnemySpawnerData.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetPath.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/ISpawnerFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/EnemyFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Editor/EnemySpawnerEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Window.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/WindowBase.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/ShopWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/IUiFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/WindowStaticData.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/Static/WindowStaticData.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/Static/IStaticDataService.cs" />
@@ -118,9 +112,14 @@
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/DataExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/IGameStateMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/LevelTransferTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/Static/MonstersStaticData.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/EnemyFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" />
       </list>
     </option>
   </component>
@@ -195,7 +194,7 @@
       <workItem from="1704811876753" duration="5713000" />
       <workItem from="1704889524143" duration="8797000" />
       <workItem from="1704976621491" duration="3322000" />
-      <workItem from="1704994167375" duration="2699000" />
+      <workItem from="1704994167375" duration="6371000" />
     </task>
     <task id="LOCAL-00001" summary="end second lesson">
       <created>1702832382459</created>
@@ -309,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704902974306</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add some tasks to Lesson 15">
+      <created>1704997297178</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1704997297178</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +353,8 @@
     <MESSAGE value="End lesson 12" />
     <MESSAGE value="End homework to lesson 13" />
     <MESSAGE value="End lesson 14" />
-    <option name="LAST_COMMIT_MESSAGE" value="End lesson 14" />
+    <MESSAGE value="Add some tasks to Lesson 15" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some tasks to Lesson 15" />
   </component>
   <component name="WindowStateProjectService">
     <state width="570" height="436" key="DebuggerActiveHint" timestamp="1704401876227">
@@ -434,10 +441,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="115" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1704897324087" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1704902977490">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1704997301941">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1704902977490" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1704997301941" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1704405043058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -446,10 +453,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="116" width="705" height="654" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1704294160137" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1704902952279">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1705001032419">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1704902952279" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1705001032419" />
     <state x="549" y="217" key="save.file.as.template.dialog" timestamp="1702816094796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

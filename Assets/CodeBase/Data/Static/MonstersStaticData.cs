@@ -1,5 +1,7 @@
 ﻿using CodeBase.Enemy;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Serialization;
 
 namespace CodeBase.Data
 {
@@ -17,6 +19,6 @@ namespace CodeBase.Data
         public float Damage = 10;
         public float Speed = 3;
 
-        public GameObject EnemyPrefab;
+        public AssetReferenceGameObject PrefabReference;
     }
 }
