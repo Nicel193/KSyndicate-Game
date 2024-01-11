@@ -39,8 +39,6 @@ namespace CodeBase.UI.Services
         {
             DestroyWindow();
 
-            Debug.Log(_previousPages.Count);
-
             if (_previousPages.Count > 0)
             {
                 WindowType windowType = _previousPages.Last();

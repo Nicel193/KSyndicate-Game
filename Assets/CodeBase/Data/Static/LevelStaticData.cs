@@ -9,5 +9,7 @@ namespace CodeBase.Data.Static
         public string LevelKey;
 
         public List<EnemySpawnerData> enemySpawners;
+        
+        public Vector3 playerSpawnPosition;
     }
 }

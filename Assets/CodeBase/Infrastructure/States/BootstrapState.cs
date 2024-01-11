@@ -42,6 +42,7 @@ namespace CodeBase.Infrastructure.States
             RegisterStaticData();
             RegisterAdsService();
 
+            _services.RegisterSingle<IGameStateMachine>(_stateMachine);
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<ISavedProgressLocator>(new SavedProgressLocator());
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());

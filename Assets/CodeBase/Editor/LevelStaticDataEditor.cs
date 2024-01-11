@@ -28,7 +28,7 @@ namespace CodeBase.Editor
 
                 levelData.LevelKey = SceneManager.GetActiveScene().name;
         
-                // levelData.InitialHeroPosition =  GameObject.FindWithTag(InitialPointTag).transform.position;
+                levelData.playerSpawnPosition = GameObject.FindWithTag(InitialPointTag).transform.position;
         
                 // levelData.LevelTransfer.Position = GameObject.FindWithTag(LevelTransferInitialPointTag).transform.position;
             }

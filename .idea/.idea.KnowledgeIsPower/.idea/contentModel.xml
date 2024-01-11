@@ -106,6 +106,7 @@
               <e p="BootstrapState.cs" t="Include" />
               <e p="GameLoopState.cs" t="Include" />
               <e p="GameStateMachine.cs" t="Include" />
+              <e p="IGameStateMachine.cs" t="Include" />
               <e p="IState.cs" t="Include" />
               <e p="LoadLevelState.cs" t="Include" />
               <e p="LoadProgressState.cs" t="Include" />
@@ -121,6 +122,8 @@
             </e>
             <e p="IAnimationStateReader.cs" t="Include" />
             <e p="IHealth.cs" t="Include" />
+            <e p="Levels.cs" t="Include" />
+            <e p="LevelTransferTrigger.cs" t="Include" />
             <e p="LoadingCurtain.cs" t="Include" />
             <e p="Loot" t="Include">
               <e p="Loot.cs" t="Include" />

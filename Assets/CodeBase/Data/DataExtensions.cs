@@ -1,3 +1,5 @@
+using System;
+using System.ComponentModel;
 using UnityEngine;
 using Newtonsoft.Json;
 
@@ -27,5 +29,12 @@ namespace CodeBase.Data
 
     public static T ToDeserialized<T>(this string json) =>
       JsonConvert.DeserializeObject<T>(json);
+    
+    public static string GetDescription(this Enum value)
+    {
+      var field = value.GetType().GetField(value.ToString());
+      var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
+      return attribute == null ? value.ToString() : attribute.Description;
+    }
   }
 }
