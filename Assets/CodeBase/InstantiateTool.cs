@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.AssetManagement;
+﻿using System.Threading.Tasks;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.SaveLoad;
 using UnityEngine;
 
@@ -31,5 +32,14 @@ namespace CodeBase
             return gameObject;
         }
 
+        
+        public async Task<GameObject> InstantiateByAddress(string prefabAddress)
+        {
+            GameObject prefab = await _assets.Load<GameObject>(prefabAddress);
+            GameObject gameObject = Object.Instantiate(prefab);
+
+            _savedProgressLocator.RegisterProgressWatchers(gameObject);
+            return gameObject;
+        }
     }
 }

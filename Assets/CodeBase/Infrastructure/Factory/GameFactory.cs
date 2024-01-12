@@ -25,7 +25,7 @@ namespace CodeBase.Infrastructure.Factory
 
         public GameObject CreateHero(Vector3 at)
         {
-            HeroGameObject = _instantiateTool.InstantiateRegistered(AssetPath.HeroPath, at);
+            HeroGameObject = _instantiateTool.InstantiateRegistered(AssetAddress.HeroPath, at);
             
             InitHud(HeroGameObject);
             
@@ -34,7 +34,7 @@ namespace CodeBase.Infrastructure.Factory
         
         private void InitHud(GameObject hero)
         {
-            GameObject hud = _instantiateTool.InstantiateRegistered(AssetPath.HudPath);
+            GameObject hud = _instantiateTool.InstantiateRegistered(AssetAddress.HudPath);
       
             hud.GetComponentInChildren<ActorUI>().Construct(hero.GetComponent<IHealth>());
             hud.GetComponentInChildren<LootCounter>().Construct(_progressService.Progress.WorldData);

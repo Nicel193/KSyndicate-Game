@@ -41,17 +41,24 @@ namespace CodeBase.Infrastructure.States
         {
             RegisterStaticData();
             RegisterAdsService();
+            RegisterAssetProvider();
 
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<ISavedProgressLocator>(new SavedProgressLocator());
-            _services.RegisterSingle<IAssetProvider>(new AssetProvider());
             _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
             _services.RegisterSingle<IInstantiateTool>(new InstantiateTool(_services.Single<IAssetProvider>(),
                 _services.Single<ISavedProgressLocator>()));
 
             RegisterFactories();
             RegisterSaveLoad();
+        }
+
+        private void RegisterAssetProvider()
+        {
+            IAssetProvider assetProvider = new AssetProvider();
+            assetProvider.Initialize();
+            _services.RegisterSingle<IAssetProvider>(assetProvider);
         }
 
         private void RegisterAdsService()

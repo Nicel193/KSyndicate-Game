@@ -1,10 +1,10 @@
 namespace CodeBase.Infrastructure.AssetManagement
 {
-  public static class AssetPath
+  public static class AssetAddress
   {
-    public const string Spawner = "Enemies/Spawner";
     public const string HeroPath = "Hero/hero";
     public const string HudPath = "Hud/Hud";
-    public const string Loot = "Loot/Loot";
+    public const string Spawner = "Spawner";
+    public const string Loot = "Loot";
   }
 }

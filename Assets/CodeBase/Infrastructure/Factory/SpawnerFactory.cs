@@ -1,4 +1,5 @@
-﻿using CodeBase.Enemy;
+﻿using System.Threading.Tasks;
+using CodeBase.Enemy;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Logic.EnemySpawners;
 using CodeBase.Logic.Loot;
@@ -19,14 +20,15 @@ namespace CodeBase.Infrastructure.Factory
             _lootFactory = lootFactory;
         }
 
-        public void CreateEnemySpawner(Vector3 at, string spawnerId, EnemyType enemyType)
+        public async Task CreateEnemySpawner(Vector3 at, string spawnerId, EnemyType enemyType)
         {
-            SpawnPoint spawnPoint = _instantiateTool.InstantiateRegistered(AssetPath.Spawner, at)
-                .GetComponent<SpawnPoint>();
+            GameObject instantiate = await _instantiateTool.InstantiateByAddress(AssetAddress.Spawner);
+            SpawnPoint spawnPoint = instantiate.GetComponent<SpawnPoint>();
             
             spawnPoint.Construct(_enemyFactory);
             spawnPoint.Id = spawnerId;
             spawnPoint.EnemyType = enemyType;
+            spawnPoint.transform.position = at;
             
             if(spawnPoint.TryGetComponent<LootSpawner>(out LootSpawner lootSpawner))
             {

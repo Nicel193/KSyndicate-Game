@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.AssetManagement;
+﻿using System.Threading.Tasks;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Logic.Loot;
 using UnityEngine;
@@ -16,11 +17,12 @@ namespace CodeBase.Infrastructure.Factory
             _progressService = progressService;
         }
 
-        public LootPiece CreateLoot(Vector3 at)
+        public async Task<LootPiece> CreateLoot(Vector3 at)
         {
-            GameObject registered = _instantiateTool.InstantiateRegistered(AssetPath.Loot, at);
-            LootPiece lootPiece = registered.GetComponent<LootPiece>();
-            
+            GameObject prefab = await _instantiateTool.InstantiateByAddress(AssetAddress.Loot);
+            LootPiece lootPiece = prefab.GetComponent<LootPiece>();
+
+            lootPiece.transform.position = at;
             lootPiece.Construct(_progressService.Progress.WorldData);
 
             return lootPiece;

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using CodeBase.Data;
 using CodeBase.Enemy;
 using CodeBase.Infrastructure.Factory;
@@ -37,9 +38,9 @@ namespace CodeBase.Logic.Loot
             _enemyDeath.Happaned += SpawnLoot;
         }
 
-        private void SpawnLoot()
+        private async void SpawnLoot()
         {
-            SpawnLootPiece(this.transform.position);
+            await SpawnLootPiece(this.transform.position);
             DeathUnsubscribe();
         }
 
@@ -48,9 +49,9 @@ namespace CodeBase.Logic.Loot
             if (_enemyDeath != null) _enemyDeath.Happaned -= SpawnLoot;
         }
 
-        private void SpawnLootPiece(Vector3 at)
+        private async Task SpawnLootPiece(Vector3 at)
         {
-            LootPiece lootPiece = _lootFactory.CreateLoot(at);
+            LootPiece lootPiece = await _lootFactory.CreateLoot(at);
             lootPiece.Initialize(_loot, () => { _isPicked = true; });
 
             _droppedLoot = true;
@@ -58,13 +59,13 @@ namespace CodeBase.Logic.Loot
 
         #region SaveLoad
 
-        public void LoadProgress(PlayerProgress progress)
+        public async void LoadProgress(PlayerProgress progress)
         {
             if (progress.DropedLootData.LootsData.TryGetValue(Id, out DroppedLootData.Data data))
             {
                 _loot = new Loot() {Value = data.Count};
 
-                SpawnLootPiece(data.Position.AsUnityVector());
+                await SpawnLootPiece(data.Position.AsUnityVector());
             }
         }
 

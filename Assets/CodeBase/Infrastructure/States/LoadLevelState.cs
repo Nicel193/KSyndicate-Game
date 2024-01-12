@@ -1,5 +1,7 @@
-﻿using CodeBase.CameraLogic;
+﻿using System.Threading.Tasks;
+using CodeBase.CameraLogic;
 using CodeBase.Data.Static;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.SaveLoad;
@@ -21,11 +23,12 @@ namespace CodeBase.Infrastructure.States
         private readonly IStaticDataService _staticData;
         private readonly ISpawnerFactory _spawnerFactory;
         private readonly IUIFactory _uiFactory;
+        private readonly IAssetProvider _assetProvider;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
             IGameFactory gameFactory, IPersistentProgressService progressService,
             ISavedProgressLocator savedProgressLocator, IStaticDataService staticData, ISpawnerFactory spawnerFactory,
-            IUIFactory uiFactory)
+            IUIFactory uiFactory, IAssetProvider assetProvider)
         {
             _stateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
@@ -36,6 +39,7 @@ namespace CodeBase.Infrastructure.States
             _staticData = staticData;
             _spawnerFactory = spawnerFactory;
             _uiFactory = uiFactory;
+            _assetProvider = assetProvider;
         }
 
         public void Enter(string sceneName)
@@ -48,11 +52,13 @@ namespace CodeBase.Infrastructure.States
         public void Exit() =>
             _loadingCurtain.Hide();
 
-        private void OnLoaded()
+        private async void OnLoaded()
         {
             InitUIRoot();
-            InitGameWorld();
+            await InitGameWorld();
             InformProgressReaders();
+            
+            // CleanUp();
 
             _stateMachine.Enter<GameLoopState>();
         }
@@ -68,11 +74,11 @@ namespace CodeBase.Infrastructure.States
             _uiFactory.CreateUIRoot();
         }
 
-        private void InitGameWorld()
+        private async Task InitGameWorld()
         {
             LevelStaticData levelStaticData = LevelStaticData();
 
-            InitSpawners(levelStaticData);
+            await InitSpawners(levelStaticData);
             InitPlayer(levelStaticData);
         }
 
@@ -90,15 +96,20 @@ namespace CodeBase.Infrastructure.States
             CameraFollow(hero);
         }
 
-        private void InitSpawners(LevelStaticData levelStaticData)
+        private async Task InitSpawners(LevelStaticData levelStaticData)
         {
             foreach (var enemySpawner in levelStaticData.enemySpawners)
             {
-                _spawnerFactory.CreateEnemySpawner(enemySpawner.Position, enemySpawner.Id, enemySpawner.EnemyType);
+               await _spawnerFactory.CreateEnemySpawner(enemySpawner.Position, enemySpawner.Id, enemySpawner.EnemyType);
             }
         }
 
         private void CameraFollow(GameObject hero) =>
             Camera.main.GetComponent<CameraFollow>().Follow(hero);
+
+        private void CleanUp()
+        {
+            _assetProvider.CleanUp();
+        }
     }
 }
