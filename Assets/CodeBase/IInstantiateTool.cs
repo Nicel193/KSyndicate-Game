@@ -6,8 +6,8 @@ namespace CodeBase
 {
     public interface IInstantiateTool : IService
     {
-        GameObject InstantiateRegistered(string prefabPath, Vector3 at);
-        GameObject InstantiateRegistered(string prefabPath);
+        Task<GameObject> InstantiateRegistered(string prefabPath, Vector3 at);
+        Task<GameObject> InstantiateRegistered(string prefabPath);
         Task<GameObject> InstantiateByAddress(string prefabAddress);
     }
 }

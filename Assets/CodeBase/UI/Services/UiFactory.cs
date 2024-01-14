@@ -1,6 +1,6 @@
-﻿using CodeBase.Data;
+﻿using System.Threading.Tasks;
+using CodeBase.Data;
 using CodeBase.Data.Static;
-using CodeBase.Infrastructure;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Services.Ads;
@@ -12,7 +12,7 @@ namespace CodeBase.UI.Services
 {
     public class UIFactory : IUIFactory
     {
-        private const string UIRootPath = "UI/UIRoot";
+        private const string UIRootPath = "UIRoot";
 
         private readonly IAssetProvider _assetProvider;
         private readonly IStaticDataService _staticData;
@@ -46,9 +46,11 @@ namespace CodeBase.UI.Services
             return window;
         }
 
-        public void CreateUIRoot()
+        public async Task CreateUIRoot()
         {
-            _uiRoot = _assetProvider.Instantiate(UIRootPath).transform;
+            GameObject instantiate = await _assetProvider.Instantiate(UIRootPath);
+
+            _uiRoot = instantiate.transform;
         }
 
         private WindowBase CreateWindow(WindowType windowType)

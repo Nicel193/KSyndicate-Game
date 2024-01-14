@@ -37,6 +37,18 @@ MonoBehaviour:
     m_Address: Spawner
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: f6395af14c6ae2d4ea00c7e97e633ad3
+    m_Address: Hud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 181862a89f60d7a459002f9870860ad4
+    m_Address: Hero
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 526effd35011f1347b2f23eba9847e96
+    m_Address: UIRoot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 18d6917703685d741ae435def33ae8a2, type: 2}
   m_SchemaSet:

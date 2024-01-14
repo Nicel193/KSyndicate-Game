@@ -16,17 +16,17 @@ namespace CodeBase
             _savedProgressLocator = savedProgressLocator;
         }
         
-        public GameObject InstantiateRegistered(string prefabPath, Vector3 at)
+        public async Task<GameObject> InstantiateRegistered(string prefabPath, Vector3 at)
         {
-            GameObject gameObject = _assets.Instantiate(path: prefabPath, at: at);
+            GameObject gameObject = await _assets.Instantiate(assetAddress: prefabPath, at: at);
 
             _savedProgressLocator.RegisterProgressWatchers(gameObject);
             return gameObject;
         }
 
-        public GameObject InstantiateRegistered(string prefabPath)
+        public async Task<GameObject> InstantiateRegistered(string prefabPath)
         {
-            GameObject gameObject = _assets.Instantiate(path: prefabPath);
+            GameObject gameObject = await _assets.Instantiate(assetAddress: prefabPath);
 
             _savedProgressLocator.RegisterProgressWatchers(gameObject);
             return gameObject;

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Logic;
@@ -22,19 +23,19 @@ namespace CodeBase.Infrastructure.Factory
             _progressService = progressService;
             _windowService = windowService;
         }
-
-        public GameObject CreateHero(Vector3 at)
+        
+        public async Task<GameObject> CreateHero(Vector3 at)
         {
-            HeroGameObject = _instantiateTool.InstantiateRegistered(AssetAddress.HeroPath, at);
+            HeroGameObject = await _instantiateTool.InstantiateRegistered(AssetAddress.HeroPath, at);
             
-            InitHud(HeroGameObject);
+            await InitHud(HeroGameObject);
             
             return HeroGameObject;
         }
         
-        private void InitHud(GameObject hero)
+        private async Task InitHud(GameObject hero)
         {
-            GameObject hud = _instantiateTool.InstantiateRegistered(AssetAddress.HudPath);
+            GameObject hud = await _instantiateTool.InstantiateRegistered(AssetAddress.HudPath);
       
             hud.GetComponentInChildren<ActorUI>().Construct(hero.GetComponent<IHealth>());
             hud.GetComponentInChildren<LootCounter>().Construct(_progressService.Progress.WorldData);

@@ -7,8 +7,8 @@ namespace CodeBase.Infrastructure.AssetManagement
 {
     public interface IAssetProvider : IService
     {
-        GameObject Instantiate(string path, Vector3 at);
-        GameObject Instantiate(string path);
+        Task<GameObject> Instantiate(string assetAddress, Vector3 at);
+        Task<GameObject> Instantiate(string assetAddress);
         Task<T> Load<T>(AssetReference assetReference) where T : class;
         Task<T> Load<T>(string assetAddress)  where T : class;
         void CleanUp();

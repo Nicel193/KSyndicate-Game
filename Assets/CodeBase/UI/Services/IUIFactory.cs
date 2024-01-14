@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Services;
+﻿using System.Threading.Tasks;
+using CodeBase.Infrastructure.Services;
 using CodeBase.UI.Windows;
 
 namespace CodeBase.UI.Services
@@ -7,6 +8,6 @@ namespace CodeBase.UI.Services
     {
         WindowBase CreateShop();
         WindowBase CreatePlayerStats();
-        void CreateUIRoot();
+        Task CreateUIRoot();
     }
 }

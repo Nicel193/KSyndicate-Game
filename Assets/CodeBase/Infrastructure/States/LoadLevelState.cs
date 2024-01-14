@@ -54,7 +54,7 @@ namespace CodeBase.Infrastructure.States
 
         private async void OnLoaded()
         {
-            InitUIRoot();
+            await InitUIRoot();
             await InitGameWorld();
             InformProgressReaders();
             
@@ -69,9 +69,9 @@ namespace CodeBase.Infrastructure.States
                 progressReader.LoadProgress(_progressService.Progress);
         }
 
-        private void InitUIRoot()
+        private async Task InitUIRoot()
         {
-            _uiFactory.CreateUIRoot();
+           await _uiFactory.CreateUIRoot();
         }
 
         private async Task InitGameWorld()
@@ -79,7 +79,7 @@ namespace CodeBase.Infrastructure.States
             LevelStaticData levelStaticData = LevelStaticData();
 
             await InitSpawners(levelStaticData);
-            InitPlayer(levelStaticData);
+            await InitPlayer(levelStaticData);
         }
 
         private LevelStaticData LevelStaticData()
@@ -89,9 +89,9 @@ namespace CodeBase.Infrastructure.States
             return levelStaticData;
         }
 
-        private void InitPlayer(LevelStaticData levelStaticData)
+        private async Task InitPlayer(LevelStaticData levelStaticData)
         {
-            GameObject hero = _gameFactory.CreateHero(levelStaticData.playerSpawnPosition);
+            GameObject hero = await _gameFactory.CreateHero(levelStaticData.playerSpawnPosition);
 
             CameraFollow(hero);
         }

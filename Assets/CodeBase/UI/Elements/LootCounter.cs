@@ -16,6 +16,8 @@ namespace CodeBase.UI
 
         private void Update()
         {
+            if (_worldData == null) return;
+
             Counter.text = _worldData.LootData.Collected.ToString();
         }
     }

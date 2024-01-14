@@ -40,16 +40,14 @@ namespace CodeBase.Infrastructure.AssetManagement
                 assetAddress);
         }
 
-        public GameObject Instantiate(string path, Vector3 at)
+        public Task<GameObject> Instantiate(string assetAddress, Vector3 at)
         {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab, at, Quaternion.identity);
+            return Addressables.InstantiateAsync(assetAddress, at, Quaternion.identity).Task;
         }
 
-        public GameObject Instantiate(string path)
+        public Task<GameObject> Instantiate(string assetAddress)
         {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab);
+            return Addressables.InstantiateAsync(assetAddress).Task;
         }
 
         public void CleanUp()
