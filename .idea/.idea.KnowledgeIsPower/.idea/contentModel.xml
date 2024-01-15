@@ -131,6 +131,7 @@
               <e p="LootSpawner.cs" t="Include" />
             </e>
             <e p="SaveTrigger.cs" t="Include" />
+            <e p="SpawnEnemyTrigger.cs" t="Include" />
             <e p="UniqueId.cs" t="Include" />
           </e>
           <e p="Services" t="Include">

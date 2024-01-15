@@ -28,7 +28,7 @@ namespace CodeBase.Infrastructure.States
                     services.Single<ISpawnerFactory>(), services.Single<IUIFactory>(), services.Single<IAssetProvider>()),
                 [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IPersistentProgressService>(),
                     services.Single<ISaveLoadService>(), services.Single<IStaticDataService>()),
-                [typeof(GameLoopState)] = new GameLoopState(this),
+                [typeof(GameLoopState)] = new GameLoopState(this, services.Single<IAssetProvider>()),
             };
         }
 

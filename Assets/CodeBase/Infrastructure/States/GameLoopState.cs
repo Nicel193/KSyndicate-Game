@@ -1,14 +1,18 @@
-﻿namespace CodeBase.Infrastructure.States
+﻿using CodeBase.Infrastructure.AssetManagement;
+
+namespace CodeBase.Infrastructure.States
 {
   public class GameLoopState : IState
   {
-    public GameLoopState(GameStateMachine stateMachine)
+    private readonly IAssetProvider _assetProvider;
+
+    public GameLoopState(GameStateMachine stateMachine, IAssetProvider assetProvider)
     {
+      _assetProvider = assetProvider;
     }
 
-    public void Exit()
-    {
-    }
+    public void Exit() => 
+      _assetProvider.CleanUp();
 
     public void Enter()
     {

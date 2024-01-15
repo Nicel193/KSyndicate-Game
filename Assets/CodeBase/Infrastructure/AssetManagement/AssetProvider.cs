@@ -8,59 +8,41 @@ namespace CodeBase.Infrastructure.AssetManagement
 {
     public class AssetProvider : IAssetProvider
     {
-        private readonly Dictionary<string, AsyncOperationHandle> _completedCache =
-            new Dictionary<string, AsyncOperationHandle>();
-
-        private readonly Dictionary<string, List<AsyncOperationHandle>> _handles =
-            new Dictionary<string, List<AsyncOperationHandle>>();
+        private readonly Dictionary<string, AssetInfo> _assetInfoDictionary =
+            new Dictionary<string, AssetInfo>();
 
         public void Initialize()
         {
             Addressables.InitializeAsync();
         }
 
-        //TODO:understand how asynchrony works
         public async Task<T> Load<T>(AssetReference assetReference) where T : class
         {
             string assetReferenceAssetGuid = assetReference.AssetGUID;
 
-            if (_completedCache.TryGetValue(assetReferenceAssetGuid, out AsyncOperationHandle completedHandle))
-                return completedHandle.Result as T;
+            if (TryGetCompletedHandle<T>(assetReferenceAssetGuid, out AssetInfo assetInfo))
+                return assetInfo.CompletedHandle.Result as T;
 
-            return await RunWithCacheComplite(Addressables.LoadAssetAsync<T>(assetReference),
+            return await RunWithCacheComplete(Addressables.LoadAssetAsync<T>(assetReference),
                 assetReferenceAssetGuid);
         }
 
         public async Task<T> Load<T>(string assetAddress) where T : class
         {
-            if (_completedCache.TryGetValue(assetAddress, out AsyncOperationHandle completedHandle))
-                return completedHandle.Result as T;
+            if (TryGetCompletedHandle<T>(assetAddress, out AssetInfo assetInfo))
+                return assetInfo.CompletedHandle.Result as T;
 
-            return await RunWithCacheComplite(Addressables.LoadAssetAsync<T>(assetAddress),
+            return await RunWithCacheComplete(Addressables.LoadAssetAsync<T>(assetAddress),
                 assetAddress);
         }
 
-        public Task<GameObject> Instantiate(string assetAddress, Vector3 at)
-        {
-            return Addressables.InstantiateAsync(assetAddress, at, Quaternion.identity).Task;
-        }
+        public Task<GameObject> Instantiate(string address, Vector3 at) =>
+            Addressables.InstantiateAsync(address, at, Quaternion.identity).Task;
 
-        public Task<GameObject> Instantiate(string assetAddress)
-        {
-            return Addressables.InstantiateAsync(assetAddress).Task;
-        }
+        public Task<GameObject> Instantiate(string address) =>
+            Addressables.InstantiateAsync(address).Task;
 
-        public void CleanUp()
-        {
-            foreach (var resourceHandles in _handles.Values)
-                foreach (var t in resourceHandles)
-                    Addressables.Release(t);
-            
-            _completedCache.Clear();
-            _handles.Clear();
-        }
-
-        private async Task<T> RunWithCacheComplite<T>(AsyncOperationHandle<T> operationHandle,
+        private async Task<T> RunWithCacheComplete<T>(AsyncOperationHandle<T> operationHandle,
             string assetReferenceAssetGuid)
             where T : class
         {
@@ -68,8 +50,10 @@ namespace CodeBase.Infrastructure.AssetManagement
 
             asyncOperationHandle.Completed += h =>
             {
-                if (!_completedCache.ContainsKey(assetReferenceAssetGuid))
-                    _completedCache.Add(assetReferenceAssetGuid, asyncOperationHandle);
+                if (_assetInfoDictionary.ContainsKey(assetReferenceAssetGuid))
+                {
+                    _assetInfoDictionary[assetReferenceAssetGuid].CompletedHandle = asyncOperationHandle;
+                }
             };
 
             AddHandle(assetReferenceAssetGuid, asyncOperationHandle);
@@ -79,13 +63,34 @@ namespace CodeBase.Infrastructure.AssetManagement
 
         private void AddHandle<T>(string key, AsyncOperationHandle<T> asyncOperationHandle) where T : class
         {
-            if (!_handles.TryGetValue(key, out List<AsyncOperationHandle> resourcesHandle))
+            if (!_assetInfoDictionary.TryGetValue(key, out AssetInfo assetInfo))
             {
-                resourcesHandle = new List<AsyncOperationHandle>();
-                _handles[key] = resourcesHandle;
+                assetInfo = new AssetInfo();
+                _assetInfoDictionary[key] = assetInfo;
             }
 
-            resourcesHandle.Add(asyncOperationHandle);
+            assetInfo.Handles.Add(asyncOperationHandle);
+        }
+
+        public void CleanUp()
+        {
+            foreach (var assetInfo in _assetInfoDictionary.Values)
+            foreach (var t in assetInfo.Handles)
+                Addressables.Release(t);
+
+            _assetInfoDictionary.Clear();
+        }
+
+        private class AssetInfo
+        {
+            public AsyncOperationHandle CompletedHandle;
+            public List<AsyncOperationHandle> Handles = new List<AsyncOperationHandle>();
+        }
+
+        private bool TryGetCompletedHandle<T>(string assetAddress, out AssetInfo assetInfo) where T : class
+        {
+            return _assetInfoDictionary.TryGetValue(assetAddress, out assetInfo) &&
+                   !assetInfo.CompletedHandle.Equals(default);
         }
     }
 }

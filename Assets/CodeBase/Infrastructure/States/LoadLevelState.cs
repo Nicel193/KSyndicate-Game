@@ -57,8 +57,6 @@ namespace CodeBase.Infrastructure.States
             await InitUIRoot();
             await InitGameWorld();
             InformProgressReaders();
-            
-            // CleanUp();
 
             _stateMachine.Enter<GameLoopState>();
         }
