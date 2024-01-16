@@ -10,6 +10,7 @@ namespace CodeBase.Data
     public Stats HeroStats;
     public KillData KillData;
     public DroppedLootData DropedLootData;
+    public PurchaseData PurchaseData;
 
     public PlayerProgress(string initialLevel)
     {

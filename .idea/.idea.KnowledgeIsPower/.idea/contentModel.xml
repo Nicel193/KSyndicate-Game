@@ -21,6 +21,7 @@
             <e p="LootData.cs" t="Include" />
             <e p="PlayerProgress.cs" t="Include" />
             <e p="PositionOnLevel.cs" t="Include" />
+            <e p="PurchaseData.cs" t="Include" />
             <e p="State.cs" t="Include" />
             <e p="Static" t="Include">
               <e p="EnemySpawnerData.cs" t="Include" />
@@ -84,6 +85,15 @@
             <e p="Game.cs" t="Include" />
             <e p="GameBootstrapper.cs" t="Include" />
             <e p="GameRunner.cs" t="Include" />
+            <e p="IAP" t="Include">
+              <e p="IAPProvider.cs" t="Include" />
+              <e p="IAPService.cs" t="Include" />
+              <e p="IIAPService.cs" t="Include" />
+              <e p="ItemType.cs" t="Include" />
+              <e p="ProductConfig.cs" t="Include" />
+              <e p="ProductConfigWrapper.cs" t="Include" />
+              <e p="ProductDescription.cs" t="Include" />
+            </e>
             <e p="ICoroutineRunner.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
             <e p="Services" t="Include">

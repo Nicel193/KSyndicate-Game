@@ -1,6 +1,7 @@
 ﻿using CodeBase.Data.Static;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.IAP;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.SaveLoad;
@@ -50,6 +51,7 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<IInstantiateTool>(new InstantiateTool(_services.Single<IAssetProvider>(),
                 _services.Single<ISavedProgressLocator>()));
 
+            RegisterIAPService();
             RegisterFactories();
             RegisterSaveLoad();
         }
@@ -66,6 +68,17 @@ namespace CodeBase.Infrastructure.States
             IAdsService adsService = new AdsService();
             adsService.Initialize();
             _services.RegisterSingle<IAdsService>(adsService);
+        }
+
+        private void RegisterIAPService()
+        {
+            IAPProvider provider = new IAPProvider();
+            IIAPService iapService = new IAPService(provider, 
+                _services.Single<IPersistentProgressService>());
+
+            iapService.Initialize();
+            
+            _services.RegisterSingle<IIAPService>(iapService);
         }
 
         private void RegisterSaveLoad()
