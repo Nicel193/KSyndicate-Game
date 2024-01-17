@@ -12,5 +12,7 @@ namespace CodeBase.Infrastructure.IAP
         void Initialize();
         PurchaseProcessingResult ProcessPurchase(Product product);
         List<ProductDescription> Products();
+        void StartPurchase(string productId);
+        event Action Refresh;
     }
 }

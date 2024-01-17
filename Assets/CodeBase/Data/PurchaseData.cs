@@ -9,15 +9,10 @@ namespace CodeBase.Data
 
         public void AddPurchase(string id)
         {
-            if(BoughtIAPs.TryGetValue(id, out int quantity))
-            {
-                quantity++;
-                Debug.Log(quantity);
-            }
+            if (BoughtIAPs.ContainsKey(id))
+                BoughtIAPs[id]++;
             else
-            {
                 BoughtIAPs.Add(id, 1);
-            }
         }
     }
 }

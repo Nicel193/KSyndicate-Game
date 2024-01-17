@@ -54,15 +54,15 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 33cddcd61e69144449b696d94a079e64
-    m_Address: 1
+    m_Address: iap_icon_1
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 8925c87a7beb94c4bb8da70f92affebc
-    m_Address: 2
+    m_Address: iap_icon_2
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ea9306e1aa95eb8439400efefff9f8db
-    m_Address: 3
+    m_Address: iap_icon_3
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

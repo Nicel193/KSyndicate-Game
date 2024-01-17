@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 7386732754411185048}
   - component: {fileID: 7386732754411185051}
   - component: {fileID: 3294080021171419835}
+  - component: {fileID: 3886444729686036948}
   m_Layer: 5
   m_Name: ShopItem
   m_TagString: Untagged
@@ -196,6 +197,23 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3886444729686036948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386732754411185053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f36359f31294416ab02282b743aa3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyButton: {fileID: 7386732755006218168}
+  priceText: {fileID: 7229252422590968542}
+  quantityText: {fileID: 7386732755041712994}
+  availableItemsText: {fileID: 2483543478325818063}
+  icon: {fileID: 7386732754818486012}
 --- !u!1 &7386732754730157411
 GameObject:
   m_ObjectHideFlags: 0

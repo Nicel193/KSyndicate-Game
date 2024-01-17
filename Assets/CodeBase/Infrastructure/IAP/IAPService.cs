@@ -9,6 +9,7 @@ namespace CodeBase.Infrastructure.IAP
 {
     public class IAPService : IIAPService
     {
+        public event Action Refresh;
         public event Action Initialized;
         public bool IsInitialized => _provider.IsInitialized;
 
@@ -41,14 +42,22 @@ namespace CodeBase.Infrastructure.IAP
                     break;
             }
 
+            Refresh?.Invoke();
+            
             return PurchaseProcessingResult.Complete;
         }
+
+        public void StartPurchase(string productId) => 
+            _provider.StartPurchase(productId);
 
         public List<ProductDescription> Products() =>
             ProductDescriptions().ToList();
 
         private IEnumerable<ProductDescription> ProductDescriptions()
         {
+            if(_progressService.Progress.PurchaseData == null) 
+                _progressService.Progress.PurchaseData = new PurchaseData();
+            
             PurchaseData purchaseData = _progressService.Progress.PurchaseData;
 
             foreach (string productsKey in _provider.Products.Keys)

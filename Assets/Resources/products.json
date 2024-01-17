@@ -7,7 +7,7 @@
       "ItemType": 1,
       "Quantity": 100,
       "Price": "2.99 $",
-      "Icon": "iap_icon_2"
+      "Icon": "iap_icon_1"
     },
     {
       "Id": "skulls10",
@@ -16,7 +16,7 @@
       "ItemType": 1,
       "Quantity": 10,
       "Price": "0.99 $",
-      "Icon": "iap_icon_3"
+      "Icon": "iap_icon_2"
     },
     {
       "Id": "skulls666",
@@ -25,7 +25,7 @@
       "ItemType": 1,
       "Quantity": 666,
       "Price": "6.66 $",
-      "Icon": "iap_icon_18"
+      "Icon": "iap_icon_3"
     }
   ]
 }

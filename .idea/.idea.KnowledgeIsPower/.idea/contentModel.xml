@@ -175,6 +175,8 @@
               <e p="PlayerStatsWindow.cs" t="Include" />
               <e p="Shop" t="Include">
                 <e p="RewardedAdItem.cs" t="Include" />
+                <e p="ShopItem.cs" t="Include" />
+                <e p="ShopItemContainer.cs" t="Include" />
                 <e p="ShopWindow.cs" t="Include" />
               </e>
               <e p="WindowBase.cs" t="Include" />

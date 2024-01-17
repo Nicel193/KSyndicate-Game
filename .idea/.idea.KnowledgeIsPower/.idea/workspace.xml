@@ -25,41 +25,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfec5ffe-235a-40ee-b750-ce77fb338c86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPProvider.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IIAPService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IIAPService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ItemType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ItemType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ProductConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ProductConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ProductConfigWrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ProductConfigWrapper.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ProductDescription.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ProductDescription.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItemContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItemContainer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IIAPService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IIAPService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Free RPG Icons/PNG/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Free RPG Icons/PNG/1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Free RPG Icons/PNG/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Free RPG Icons/PNG/2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Free RPG Icons/PNG/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Free RPG Icons/PNG/3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/ShopItem.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/ShopItem.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/UiFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/UiFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Shop.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/Shop.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/UI/ShopItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/ShopItem.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +52,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Lesson14" />
+        <entry key="$PROJECT_DIR$" value="Lesson15" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,8 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/WindowConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/ShopWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/WindowType.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/PlayerStatsWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/IUIFactory.cs" />
@@ -103,7 +84,6 @@
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AllServices.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAdsService.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/WindowBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Services/Ads/IAdsService.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Services/Ads/AdsService.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/RewardedAdItem.cs" />
@@ -124,7 +104,6 @@
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/InstantiateTool.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/UiFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/LootCounter.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetAddress.cs" />
@@ -135,15 +114,19 @@
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameRunner.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IIAPService.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ProductConfigWrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/products.json" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ProductConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/UiFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/products.json" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItemContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs" />
       </list>
     </option>
   </component>
@@ -159,6 +142,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.5007474" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -173,10 +157,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="26748">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21016">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="26748" />
+      <option name="pid" value="21016" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -224,7 +208,8 @@
       <workItem from="1705354197226" duration="4505000" />
       <workItem from="1705420198238" duration="13038000" />
       <workItem from="1705441885797" duration="70000" />
-      <workItem from="1705442662160" duration="616000" />
+      <workItem from="1705442662160" duration="944000" />
+      <workItem from="1705501630896" duration="11243000" />
     </task>
     <task id="LOCAL-00001" summary="end second lesson">
       <created>1702832382459</created>
@@ -373,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705358680240</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="End half lesson 16">
+      <created>1705443450742</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1705443450742</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,13 +408,14 @@
     <MESSAGE value="Add ability instate objects with addressables" />
     <MESSAGE value="End lesson 15" />
     <MESSAGE value="Complete homework to lesson 15" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete homework to lesson 15" />
+    <MESSAGE value="End half lesson 16" />
+    <option name="LAST_COMMIT_MESSAGE" value="End half lesson 16" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="570" height="436" key="DebuggerActiveHint" timestamp="1704401876227">
+    <state width="570" height="436" key="DebuggerActiveHint" timestamp="1705514954167">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="570" height="436" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1704401876227" />
+    <state width="570" height="436" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1705514954167" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1704812343854">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -431,70 +424,70 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="314" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1702826037421" />
-    <state width="1537" height="266" key="GridCell.Tab.0.bottom" timestamp="1705442758008">
+    <state width="1537" height="207" key="GridCell.Tab.0.bottom" timestamp="1705514290519">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1705442758008" />
-    <state width="1537" height="266" key="GridCell.Tab.0.center" timestamp="1705442758008">
+    <state width="1537" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1705514290519" />
+    <state width="1537" height="207" key="GridCell.Tab.0.center" timestamp="1705514290519">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1705442758008" />
-    <state width="1537" height="266" key="GridCell.Tab.0.left" timestamp="1705442758007">
+    <state width="1537" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1705514290519" />
+    <state width="1537" height="207" key="GridCell.Tab.0.left" timestamp="1705514290519">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1705442758007" />
-    <state width="1537" height="266" key="GridCell.Tab.0.right" timestamp="1705442758008">
+    <state width="1537" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1705514290519" />
+    <state width="1537" height="207" key="GridCell.Tab.0.right" timestamp="1705514290519">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1705442758008" />
-    <state width="1537" height="266" key="GridCell.Tab.1.bottom" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1705514290519" />
+    <state width="1537" height="207" key="GridCell.Tab.1.bottom" timestamp="1705514601780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
-    <state width="1537" height="266" key="GridCell.Tab.1.center" timestamp="1705441965070">
+    <state width="1537" height="207" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1705514601780" />
+    <state width="1537" height="207" key="GridCell.Tab.1.center" timestamp="1705514601780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1705441965070" />
-    <state width="1537" height="266" key="GridCell.Tab.1.left" timestamp="1705441965070">
+    <state width="1537" height="207" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1705514601780" />
+    <state width="1537" height="207" key="GridCell.Tab.1.left" timestamp="1705514601780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1705441965070" />
-    <state width="1537" height="266" key="GridCell.Tab.1.right" timestamp="1705441965070">
+    <state width="1537" height="207" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1705514601780" />
+    <state width="1537" height="207" key="GridCell.Tab.1.right" timestamp="1705514601780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1705441965070" />
-    <state width="1537" height="266" key="GridCell.Tab.2.bottom" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1705514601780" />
+    <state width="1537" height="207" key="GridCell.Tab.2.bottom" timestamp="1705514290358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
-    <state width="1537" height="266" key="GridCell.Tab.2.center" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1705514290358" />
+    <state width="1537" height="207" key="GridCell.Tab.2.center" timestamp="1705514290358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
-    <state width="1537" height="266" key="GridCell.Tab.2.left" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1705514290358" />
+    <state width="1537" height="207" key="GridCell.Tab.2.left" timestamp="1705514290358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
-    <state width="1537" height="266" key="GridCell.Tab.2.right" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1705514290358" />
+    <state width="1537" height="207" key="GridCell.Tab.2.right" timestamp="1705514290358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
-    <state width="1537" height="266" key="GridCell.Tab.3.bottom" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1705514290358" />
+    <state width="1537" height="207" key="GridCell.Tab.3.bottom" timestamp="1705514290358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
-    <state width="1537" height="266" key="GridCell.Tab.3.center" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1705514290358" />
+    <state width="1537" height="207" key="GridCell.Tab.3.center" timestamp="1705514290358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
-    <state width="1537" height="266" key="GridCell.Tab.3.left" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1705514290358" />
+    <state width="1537" height="207" key="GridCell.Tab.3.left" timestamp="1705514290358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
-    <state width="1537" height="266" key="GridCell.Tab.3.right" timestamp="1705441965071">
+    <state width="1537" height="207" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1705514290358" />
+    <state width="1537" height="207" key="GridCell.Tab.3.right" timestamp="1705514290358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="266" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1705441965071" />
+    <state width="1537" height="207" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1705514290358" />
     <state x="597" y="86" key="RiderGenerateDialog" timestamp="1705325842930">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -507,10 +500,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1705089447180" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1705358695000">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1705443636080">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1705358695000" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1705443636080" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1704405043058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -523,10 +516,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="116" width="705" height="654" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1705328354516" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1705441560324">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1705514031549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1705441560324" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1705514031549" />
     <state x="549" y="217" key="save.file.as.template.dialog" timestamp="1702816094796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

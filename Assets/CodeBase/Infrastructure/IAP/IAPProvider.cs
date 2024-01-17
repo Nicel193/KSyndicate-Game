@@ -32,9 +32,6 @@ namespace CodeBase.Infrastructure.IAP
 
             Load();
 
-            foreach (Product product in _controller.products.all)
-                Products.Add(product.transactionID, product);
-
             foreach (ProductConfig productConfig in Configs.Values)
                 builder.AddProduct(productConfig.Id, productConfig.ProductType);
 
@@ -48,6 +45,9 @@ namespace CodeBase.Infrastructure.IAP
         {
             _extensions = extensions;
             _controller = controller;
+            
+            foreach (Product product in _controller.products.all)
+                Products.Add(product.definition.id, product);
 
             Initialized?.Invoke();
 

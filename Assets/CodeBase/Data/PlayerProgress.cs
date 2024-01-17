@@ -19,6 +19,7 @@ namespace CodeBase.Data
       HeroStats = new Stats();
       KillData = new KillData();
       DropedLootData = new DroppedLootData();
+      PurchaseData = new PurchaseData();
     }
   }
 }

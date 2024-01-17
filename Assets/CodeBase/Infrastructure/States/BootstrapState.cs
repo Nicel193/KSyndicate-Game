@@ -95,9 +95,10 @@ namespace CodeBase.Infrastructure.States
             ISavedProgressLocator savedProgressLocator = _services.Single<ISavedProgressLocator>();
             IStaticDataService staticDataService = _services.Single<IStaticDataService>();
             IAssetProvider assetProvider = _services.Single<IAssetProvider>();
+            IIAPService iapService = _services.Single<IIAPService>();
 
             _services.RegisterSingle<IUIFactory>(new UIFactory(assetProvider,
-                staticDataService, persistentProgressService, _services.Single<IAdsService>()));
+                staticDataService, persistentProgressService, _services.Single<IAdsService>(), iapService));
             _services.RegisterSingle<IWindowService>(new WindowService(_services.Single<IUIFactory>()));
             _services.RegisterSingle<IGameFactory>(new GameFactory(instantiateTool,
                 persistentProgressService, _services.Single<IWindowService>()));
