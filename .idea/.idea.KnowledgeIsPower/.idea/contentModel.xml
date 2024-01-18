@@ -126,11 +126,13 @@
           <e p="Logic" t="Include">
             <e p="AnimatorState.cs" t="Include" />
             <e p="AnimatorStateReporter.cs" t="Include" />
+            <e p="EnemyResurrecter.cs" t="Include" />
             <e p="EnemySpawners" t="Include">
               <e p="SpawnMarker.cs" t="Include" />
               <e p="SpawnPoint.cs" t="Include" />
             </e>
             <e p="IAnimationStateReader.cs" t="Include" />
+            <e p="IEnemyResurrecter.cs" t="Include" />
             <e p="IHealth.cs" t="Include" />
             <e p="Levels.cs" t="Include" />
             <e p="LevelTransferTrigger.cs" t="Include" />

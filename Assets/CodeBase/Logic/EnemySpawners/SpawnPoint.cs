@@ -8,6 +8,7 @@ namespace CodeBase.Logic.EnemySpawners
 {
     public class SpawnPoint : MonoBehaviour, ISavedProgress
     {
+        public bool EnemyIsDeath => _stain;
         public string Id;
         public EnemyType EnemyType;
         
@@ -26,6 +27,8 @@ namespace CodeBase.Logic.EnemySpawners
 
             _enemyDeath = monster.GetComponent<EnemyDeath>();
             _enemyDeath.Happaned += Slay;
+
+            _stain = false;
         }
 
         private void Slay()

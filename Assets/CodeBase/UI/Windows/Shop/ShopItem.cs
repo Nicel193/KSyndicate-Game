@@ -38,6 +38,9 @@ namespace CodeBase.UI.Windows.Shop
             quantityText.text = _productDescription.ProductConfig.Quantity.ToString();
             availableItemsText.text = _productDescription.AvaiblePurchaseLeft.ToString();
 
+            if (_productDescription.ProductConfig.ItemType == ItemType.Resurrect)
+                quantityText.enabled = false;
+
             Vector3 scale = icon.transform.localScale;
             icon.sprite = await _assetProvider.Load<Sprite>(_productDescription.ProductConfig.Icon);
             icon.transform.localScale = scale;

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using CodeBase.CameraLogic;
 using CodeBase.Data.Static;
 using CodeBase.Infrastructure.AssetManagement;
@@ -6,6 +7,7 @@ using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.SaveLoad;
 using CodeBase.Logic;
+using CodeBase.Logic.EnemySpawners;
 using CodeBase.UI.Services;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,11 +26,12 @@ namespace CodeBase.Infrastructure.States
         private readonly ISpawnerFactory _spawnerFactory;
         private readonly IUIFactory _uiFactory;
         private readonly IAssetProvider _assetProvider;
+        private readonly IEnemyResurrecter _enemyResurrecter;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
             IGameFactory gameFactory, IPersistentProgressService progressService,
             ISavedProgressLocator savedProgressLocator, IStaticDataService staticData, ISpawnerFactory spawnerFactory,
-            IUIFactory uiFactory, IAssetProvider assetProvider)
+            IUIFactory uiFactory, IAssetProvider assetProvider, IEnemyResurrecter enemyResurrecter)
         {
             _stateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
@@ -40,6 +43,7 @@ namespace CodeBase.Infrastructure.States
             _spawnerFactory = spawnerFactory;
             _uiFactory = uiFactory;
             _assetProvider = assetProvider;
+            _enemyResurrecter = enemyResurrecter;
         }
 
         public void Enter(string sceneName)
@@ -96,10 +100,15 @@ namespace CodeBase.Infrastructure.States
 
         private async Task InitSpawners(LevelStaticData levelStaticData)
         {
+            List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
+            
             foreach (var enemySpawner in levelStaticData.enemySpawners)
             {
-               await _spawnerFactory.CreateEnemySpawner(enemySpawner.Position, enemySpawner.Id, enemySpawner.EnemyType);
+                SpawnPoint spawnPoint = await _spawnerFactory.CreateEnemySpawner(enemySpawner.Position, enemySpawner.Id, enemySpawner.EnemyType);
+                spawnPoints.Add(spawnPoint);
             }
+            
+            _enemyResurrecter.Initialize(spawnPoints);
         }
 
         private void CameraFollow(GameObject hero) =>

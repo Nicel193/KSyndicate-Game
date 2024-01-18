@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.IAP;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.SaveLoad;
+using CodeBase.Logic;
 using CodeBase.Services.Ads;
 using CodeBase.Services.Input;
 using CodeBase.UI.Services;
@@ -40,6 +41,8 @@ namespace CodeBase.Infrastructure.States
 
         private void RegisterServices()
         {
+            IPersistentProgressService persistentProgressService = new PersistentProgressService();
+
             RegisterStaticData();
             RegisterAdsService();
             RegisterAssetProvider();
@@ -47,9 +50,10 @@ namespace CodeBase.Infrastructure.States
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);
             _services.RegisterSingle<IInputService>(InputService());
             _services.RegisterSingle<ISavedProgressLocator>(new SavedProgressLocator());
-            _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
+            _services.RegisterSingle<IPersistentProgressService>(persistentProgressService);
             _services.RegisterSingle<IInstantiateTool>(new InstantiateTool(_services.Single<IAssetProvider>(),
                 _services.Single<ISavedProgressLocator>()));
+            _services.RegisterSingle<IEnemyResurrecter>(new EnemyResurrecter(persistentProgressService));
 
             RegisterIAPService();
             RegisterFactories();
@@ -73,11 +77,12 @@ namespace CodeBase.Infrastructure.States
         private void RegisterIAPService()
         {
             IAPProvider provider = new IAPProvider();
-            IIAPService iapService = new IAPService(provider, 
-                _services.Single<IPersistentProgressService>());
+            IIAPService iapService = new IAPService(provider,
+                _services.Single<IPersistentProgressService>(),
+                _services.Single<IEnemyResurrecter>());
 
             iapService.Initialize();
-            
+
             _services.RegisterSingle<IIAPService>(iapService);
         }
 

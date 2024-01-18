@@ -25,24 +25,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfec5ffe-235a-40ee-b750-ce77fb338c86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItemContainer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItemContainer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemyResurrecter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemyResurrecter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/IEnemyResurrecter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/IEnemyResurrecter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KnowledgeIsPower/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/ISpawnerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/ISpawnerFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/SpawnerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/SpawnerFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IIAPService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IIAPService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ItemType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ItemType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/UiFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/UiFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Shop.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/Shop.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Free RPG Icons/PNG/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Free RPG Icons/PNG/14.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/products.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/UI/ShopItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/ShopItem.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/WindowType.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/PlayerStatsWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/IUIFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/IWindowService.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/OpenWindowButton.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/AllServices.cs" />
@@ -101,17 +100,13 @@
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/LootFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Services/PersistentProgress/ISavedProgressReader.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/Loot/LootSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/IAssetProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/InstantiateTool.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/LootCounter.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetAddress.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameLoopState.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/SpawnEnemyTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/GameRunner.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IIAPService.cs" />
@@ -120,13 +115,20 @@
         <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Services/UiFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/products.json" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItemContainer.cs" />
-        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs" />
         <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PurchaseData.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/ItemType.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Data/PlayerProgress.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemySpawners/SpawnPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/IEnemyResurrecter.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/SpawnerFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadLevelState.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Logic/EnemyResurrecter.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/IAP/IAPService.cs" />
+        <option value="$PROJECT_DIR$/Assets/CodeBase/UI/Windows/Shop/ShopItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/products.json" />
       </list>
     </option>
   </component>
@@ -157,10 +159,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21016">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="21016" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -209,7 +211,8 @@
       <workItem from="1705420198238" duration="13038000" />
       <workItem from="1705441885797" duration="70000" />
       <workItem from="1705442662160" duration="944000" />
-      <workItem from="1705501630896" duration="11243000" />
+      <workItem from="1705501630896" duration="11590000" />
+      <workItem from="1705578704474" duration="4787000" />
     </task>
     <task id="LOCAL-00001" summary="end second lesson">
       <created>1702832382459</created>
@@ -365,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705443450742</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="End lesson 16">
+      <created>1705517078245</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1705517078245</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +419,8 @@
     <MESSAGE value="End lesson 15" />
     <MESSAGE value="Complete homework to lesson 15" />
     <MESSAGE value="End half lesson 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="End half lesson 16" />
+    <MESSAGE value="End lesson 16" />
+    <option name="LAST_COMMIT_MESSAGE" value="End lesson 16" />
   </component>
   <component name="WindowStateProjectService">
     <state width="570" height="436" key="DebuggerActiveHint" timestamp="1705514954167">
@@ -500,10 +511,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1705089447180" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1705443636080">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1705517081249">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1705443636080" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1705517081249" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1704405043058">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -516,17 +527,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="116" width="705" height="654" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1705328354516" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1705514031549">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1705583887985">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1705514031549" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1705583887985" />
     <state x="549" y="217" key="save.file.as.template.dialog" timestamp="1702816094796">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="217" key="save.file.as.template.dialog/0.0.1536.824@0.0.1536.824" timestamp="1702816094796" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1705429931772">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1705584736431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1705429931772" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1705584736431" />
   </component>
 </project>

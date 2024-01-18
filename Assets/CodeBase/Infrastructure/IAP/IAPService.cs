@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Data;
 using CodeBase.Infrastructure.Services.PersistentProgress;
+using CodeBase.Logic;
 using UnityEngine.Purchasing;
 
 namespace CodeBase.Infrastructure.IAP
@@ -15,11 +16,15 @@ namespace CodeBase.Infrastructure.IAP
 
         private readonly IAPProvider _provider;
         private readonly IPersistentProgressService _progressService;
+        private readonly IEnemyResurrecter _enemyResurrecter;
 
-        public IAPService(IAPProvider provider, IPersistentProgressService progressService)
+        public IAPService(IAPProvider provider,
+            IPersistentProgressService progressService,
+            IEnemyResurrecter enemyResurrecter)
         {
             _provider = provider;
             _progressService = progressService;
+            _enemyResurrecter = enemyResurrecter;
         }
 
         public void Initialize()
@@ -38,16 +43,20 @@ namespace CodeBase.Infrastructure.IAP
             {
                 case ItemType.Sculls:
                     _progressService.Progress.WorldData.LootData.Collected += providerConfig.Quantity;
-                    _progressService.Progress.PurchaseData.AddPurchase(definitionID);
+                    break;
+                case ItemType.Resurrect:
+                    _enemyResurrecter.Resurrect();
                     break;
             }
+            
+            _progressService.Progress.PurchaseData.AddPurchase(definitionID);
 
             Refresh?.Invoke();
-            
+
             return PurchaseProcessingResult.Complete;
         }
 
-        public void StartPurchase(string productId) => 
+        public void StartPurchase(string productId) =>
             _provider.StartPurchase(productId);
 
         public List<ProductDescription> Products() =>
@@ -55,9 +64,9 @@ namespace CodeBase.Infrastructure.IAP
 
         private IEnumerable<ProductDescription> ProductDescriptions()
         {
-            if(_progressService.Progress.PurchaseData == null) 
+            if (_progressService.Progress.PurchaseData == null)
                 _progressService.Progress.PurchaseData = new PurchaseData();
-            
+
             PurchaseData purchaseData = _progressService.Progress.PurchaseData;
 
             foreach (string productsKey in _provider.Products.Keys)

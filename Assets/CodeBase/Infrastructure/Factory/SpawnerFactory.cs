@@ -20,7 +20,7 @@ namespace CodeBase.Infrastructure.Factory
             _lootFactory = lootFactory;
         }
 
-        public async Task CreateEnemySpawner(Vector3 at, string spawnerId, EnemyType enemyType)
+        public async Task<SpawnPoint> CreateEnemySpawner(Vector3 at, string spawnerId, EnemyType enemyType)
         {
             GameObject instantiate = await _instantiateTool.InstantiateByAddress(AssetAddress.Spawner);
             SpawnPoint spawnPoint = instantiate.GetComponent<SpawnPoint>();
@@ -35,6 +35,8 @@ namespace CodeBase.Infrastructure.Factory
                 lootSpawner.Construct(_lootFactory);
                 lootSpawner.Id = spawnerId;
             }
+
+            return spawnPoint;
         }
     }
 }

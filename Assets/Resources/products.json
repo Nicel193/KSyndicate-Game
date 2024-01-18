@@ -26,6 +26,15 @@
       "Quantity": 666,
       "Price": "6.66 $",
       "Icon": "iap_icon_3"
+    },
+    {
+      "Id": "resurrect",
+      "ProductType": 0,
+      "MaxPurchaseCount": 5,
+      "ItemType": 2,
+      "Quantity": 1,
+      "Price": "100 $",
+      "Icon": "iap_icon_14"
     }
   ]
 }
